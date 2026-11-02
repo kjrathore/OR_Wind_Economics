@@ -1,4 +1,4 @@
-# ORWind_dash — Oregon offshore wind × coastal economies
+# OR_Wind_Economics — Oregon offshore wind × coastal economies
 
 An academic research dashboard (Oregon State University) that lets coastal community members
 **draw a box where a wind farm might go and immediately see what is there** — siting
@@ -14,6 +14,7 @@ layers but doesn't translate a footprint into community-level consequences.
 ## Quick start
 
 ```bash
+git clone git@github.com:kjrathore/OR_Wind_Economics.git && cd OR_Wind_Economics
 make setup     # Python venv + pinned deps (requirements.txt)
 make fetch     # download public sources -> data/raw/   (~800 MB, one time)
 make build     # data/raw -> data/processed/ + web/data/ (~35 s)
