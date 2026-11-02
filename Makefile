@@ -1,4 +1,5 @@
-PY := .venv/bin/python
+# conda users: make build PY=python
+PY ?= .venv/bin/python
 
 .PHONY: all setup fetch build bench serve clean
 

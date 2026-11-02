@@ -12,16 +12,26 @@ Legend: `[x]` done · `[ ]` open · **P1** next up · (R) needs restricted-data 
 - [x] `HexStore` in-memory query engine + benchmark (p50 0.6 ms, p95 < 8 ms)
 - [x] Docs: README, PLAN, DATA_SOURCES, DATA_POLICY
 
-## Phase 1 — MVP dashboard
-- [ ] **P1** `web/index.html`: MapLibre (or Leaflet) basemap, PNG overlays, context layers, legend
-- [ ] **P1** Draw/drag rectangle → `HexStore.summarize` → live footprint panel
-- [ ] **P1** Port panel: nearest ports' 2024 revenue by fishery (ODFW), tagged "context"
-- [ ] **P1** County panel: fishing employers + nonemployers, seafood processing, tourism vs totals
-- [ ] "Outside model coverage" message + share of box covered
-- [ ] Preset boxes: 2024 Coos Bay WEA, Brookings WEA, a pilot-scale (~15 km²) example
-- [ ] Methods & caveats page generated from `hex.json` / `sources.yaml` citations
-- [ ] Mobile layout check; accessibility (colour-blind safe legend alongside NCCOS colours)
-- [ ] Usability pass with 2–3 non-GIS colleagues
+## Phase 1 — MVP dashboard (in progress, 2026-11-02)
+- [x] `web/index.html`: MapLibre 4.7.1, Esri ocean basemap, pre-rendered overlays, context layers, legend
+- [x] Draw / move / resize box (corner handles) → live footprint panel; shareable URL (`#box=…&layer=…`)
+- [x] Hover readout: layer value, depth, distance to shore, nearest port
+- [x] Siting suitability category mix per submodel (overall, fisheries, industry, natural resources, wind, birds)
+- [x] Fishing-grounds relative index (share of Call Areas' top fishing-importance cells)
+- [x] Port panel: 2024 ODFW revenue by fishery for nearest port groups, tagged "context"
+- [x] County panel: fishing employers + nonemployers, seafood processing, lodging/food, total jobs
+- [x] Capacity scenario (MW/km² slider, homes equivalent)
+- [x] "Outside model coverage" / partial-coverage messages
+- [x] Presets: 2024 Coos Bay WEA, Brookings WEA, pilot-scale (~17 km²)
+- [x] Methods & caveats page; evidence tags (measured / modelled / context / scenario)
+- [x] Colour-blind-safe palette toggle (validated one-hue ramp); dark mode; phone layout with Layers toggle
+- [ ] **P1** Usability pass with 2–3 non-GIS colleagues; fix wording
+- [ ] **P1** Confirm basemap terms for public deployment (Esri tiles) or self-host a PMTiles basemap
+- [ ] Keyboard-accessible box entry (type coordinates / pick a preset size) — map dragging isn't keyboard-friendly
+- [ ] Table view / CSV download of the footprint summary
+- [ ] Compare two boxes side by side (moved up from Phase 3 if users ask for it)
+- [ ] Vendor MapLibre locally (no CDN) for OSU hosting
+- [ ] Automated browser smoke test (headless Chrome via DevTools protocol) in CI
 
 ## Phase 2 — Coast-wide coverage
 - [ ] Coast-wide H3 grid (res 8 ≈ 0.74 km²) from Columbia River to California border, 0–1,300 m depth

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oregon Wind Footprint Explorer</title>
+  <meta name="description" content="Draw a box off the Oregon coast and see siting suitability, fishing importance, and the ports and county economies connected to that ocean space.">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Oregon Wind Footprint Explorer</h1>
+      <p class="sub">Research prototype · Oregon State University · public data only</p>
+    </div>
+    <nav class="toplinks">
+      <a href="methods.html">Methods &amp; caveats</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="mapwrap" aria-label="Map">
+      <div id="map"></div>
+
+      <div class="mapctl card" id="mapctl">
+        <div class="ctl-row">
+          <button id="btn-draw" class="btn primary" aria-pressed="false">Draw a box</button>
+          <button id="btn-clear" class="btn" disabled>Clear</button>
+          <button id="btn-layers" class="btn only-narrow" aria-expanded="false" aria-controls="ctl-more">Layers</button>
+        </div>
+        <div class="ctl-row presets" role="group" aria-label="Example footprints">
+          <span class="muted">Try:</span>
+          <button class="chip" data-preset="coos">Coos Bay WEA</button>
+          <button class="chip" data-preset="brookings">Brookings WEA</button>
+          <button class="chip" data-preset="pilot">Pilot-scale</button>
+        </div>
+        <div id="ctl-more" class="ctl-more">
+        <label class="ctl-field">
+          <span>Map layer</span>
+          <select id="sel-layer"></select>
+        </label>
+        <div class="ctl-row">
+          <label class="ctl-inline"><span>Opacity</span><input id="rng-opacity" type="range" min="0" max="1" step="0.05" value="0.75"></label>
+          <label class="ctl-inline"><input id="chk-cvd" type="checkbox"> Colour-blind palette</label>
+        </div>
+        <div id="legend" class="legend" aria-live="polite"></div>
+        <details class="ctx">
+          <summary>Reference layers</summary>
+          <label><input type="checkbox" data-ctx="wea" checked> 2024 Wind Energy Areas <span class="muted">(rescinded 2025)</span></label>
+          <label><input type="checkbox" data-ctx="call_area" checked> 2022 Call Areas</label>
+          <label><input type="checkbox" data-ctx="cable" checked> Submarine cables</label>
+          <label><input type="checkbox" data-ctx="county"> Coastal counties</label>
+          <label><input type="checkbox" data-ctx="port" checked> Ports</label>
+        </details>
+        </div>
+      </div>
+
+      <div id="hint" class="hint" hidden>Click and drag on the map to draw a footprint</div>
+      <div id="tip" class="tip" hidden></div>
+    </section>
+
+    <aside class="panel" aria-label="Results">
+      <div id="empty" class="card intro">
+        <h2>What's in this ocean space?</h2>
+        <p>Draw a box where a wind farm might go. You'll see, instantly:</p>
+        <ul>
+          <li>how NOAA's 2023 siting model rated the area, and why</li>
+          <li>how much of the most important fishing ground it covers</li>
+          <li>which ports are closest and what they land</li>
+          <li>the coastal county economies tied to those ports</li>
+        </ul>
+        <p class="muted small">Model data covers the 2022 Coos Bay and Brookings Call Areas. Drag the box to move it, or drag a corner to resize.</p>
+      </div>
+
+      <div id="results" hidden>
+        <section class="card">
+          <div class="card-head">
+            <h2>Footprint</h2>
+            <span class="tag measured" title="Computed directly from mapped data">measured</span>
+          </div>
+          <div class="tiles" id="tiles"></div>
+          <p class="note" id="coverage-note"></p>
+          <dl class="facts" id="facts"></dl>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h2>Siting suitability</h2>
+            <span class="tag modelled" title="NOAA NCCOS relative suitability model, 2023">modelled · relative</span>
+          </div>
+          <p class="small muted">Share of the footprint in each NCCOS category. Categories are quantiles within each submodel: compare <em>mixes</em>, not raw scores across rows.</p>
+          <div id="mix"></div>
+          <div class="legend inline" id="mix-legend"></div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h2>Fishing grounds</h2>
+            <span class="tag modelled">modelled · relative</span>
+          </div>
+          <div id="fishing"></div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h2>Ports nearby</h2>
+            <span class="tag context" title="Port totals for all fishing areas, not revenue inside the box">context</span>
+          </div>
+          <div id="ports"></div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h2>County economies</h2>
+            <span class="tag context">context</span>
+          </div>
+          <div id="counties"></div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h2>Capacity</h2>
+            <span class="tag scenario" title="Illustrative; depends on your assumption">scenario</span>
+          </div>
+          <div id="capacity"></div>
+        </section>
+
+        <p class="small muted foot">Sources: NOAA NCCOS (NCEI 0306723), ODFW 2024 landings, U.S. Census CBP &amp; NES 2023, ETOPO1. Planning and discussion only; not for regulatory, legal or navigational use. <a href="methods.html">Methods &amp; caveats</a></p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

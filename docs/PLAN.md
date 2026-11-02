@@ -49,11 +49,12 @@ public sources ──fetch.py──> data/raw ──build_*.py──> web/data (
 
 - **No runtime dependency on remote GIS servers.** Remote services (BOEM GeoSEAS, WCODP) were
   slow, blocked, or offline in testing; every layer is pre-fetched and pre-computed.
+- **Basemap**: Esri World Ocean (light) / Dark Gray Canvas (dark) raster tiles, no API key — the only runtime third-party dependency besides the MapLibre CDN; both to be vendored/confirmed before public launch.
 - **Static deploy.** `web/` is plain HTML/JS + data files — any OSU static host, Nginx on an OSU
   VM, or GitHub Pages works. No database, no backend to maintain.
 - **Latency budget:** first load < 2 s on campus Wi-Fi (≈1.0 MB total gzipped today);
   box → results < 16 ms (one frame) so results update *while dragging*.
-  Measured: summarize p50 0.6 ms, p95 7.7 ms over 117k hexes (`make bench`).
+  Measured: summarize p50 0.7 ms, p95 9 ms over 117k hexes (`make bench`).
 - If data grows (coast-wide grid, many layers): add a coarse spatial index (grid buckets) in
   `HexStore`, split columns into lazily-loaded files, and serve overlays as PMTiles.
 
@@ -95,7 +96,7 @@ cost study. Always labelled *scenario*, never *forecast*.
 | Phase | Output | Exit criterion |
 |---|---|---|
 | **0 — Foundation** ✅ | repo, pipeline, public data, fast query engine, docs | `make all` reproduces everything; bench < 16 ms p95 |
-| **1 — MVP dashboard** | map + draw box + footprint panel + port/county panels + layer toggles + methods page | non-GIS user answers "what's in this box?" in < 1 min |
+| **1 — MVP dashboard** 🚧 | map + draw box + footprint panel + port/county panels + layer toggles + methods page | non-GIS user answers "what's in this box?" in < 1 min |
 | **2 — Coast-wide** | H3 grid for whole Oregon shelf: depth, distance, cables, fairways, public fishing effort | boxes anywhere off Oregon return data |
 | **3 — Economics v1** | per-fishery revenue exposure, multi-year ranges, jobs scenarios, compare 2 boxes, export PDF | method note reviewed by advisor |
 | **4 — Community testing & deploy** | IRB-approved sessions, fixes, OSU hosting | deployed URL, feedback summary |

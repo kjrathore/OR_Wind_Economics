@@ -8,8 +8,8 @@ depend on that ocean space.
 It complements, not replaces, [OROWindMap](https://offshorewind.westcoastoceans.org/), which shows
 layers but doesn't translate a footprint into community-level consequences.
 
-> Status: **v0 data foundation.** Pipeline, data and fast query engine are in place; the
-> interactive map UI is next. See [TODO.md](TODO.md) and [docs/PLAN.md](docs/PLAN.md).
+> Status: **Phase 1 MVP.** Map with draw/move/resize box, live footprint, suitability, fishing,
+> port, county and capacity panels. See [TODO.md](TODO.md) and [docs/PLAN.md](docs/PLAN.md).
 
 ## Quick start
 
@@ -18,8 +18,11 @@ make setup     # Python venv + pinned deps (requirements.txt)
 make fetch     # download public sources -> data/raw/   (~800 MB, one time)
 make build     # data/raw -> data/processed/ + web/data/ (~35 s)
 make bench     # in-browser query latency check (Node 18+)
-make serve     # static preview at http://localhost:8000
+make serve     # open http://localhost:8000
 ```
+
+Conda instead of venv: `conda env create -f environment.yml && conda activate orwind`, then
+`make fetch build PY=python`.
 
 ## Layout
 
@@ -32,6 +35,9 @@ pipeline/
   build_context.py  Call Areas, WEAs, counties, ports, cables -> context.geojson
   ports.csv         port locations + ODFW port-group mapping (hand-curated)
 web/
+  index.html        the dashboard (static; no build step)
+  methods.html      methods & caveats shown to users
+  src/app.js        map, box drawing, panels
   src/hexstore.js   in-memory footprint query engine (browser + Node)
   bench/            latency benchmark
   data/             build output served to the browser (gitignored)
@@ -43,7 +49,7 @@ docs/               PLAN, DATA_SOURCES, DATA_POLICY
 
 All map data are pre-computed offline and shipped as static files: a 0.9 MB (gzipped)
 packed grid of 117,300 hexes plus pre-rendered layer images. A drawn box is answered by
-scanning that grid in the browser — **~0.6 ms median, <8 ms p95** — with no calls to remote
+scanning that grid in the browser — **<1 ms median, <10 ms p95** — with no calls to remote
 GIS servers. Deployment is plain static hosting.
 
 ## Data & ethics

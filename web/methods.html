@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methods and Caveats</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { overflow-y: auto; }
+    .doc { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; font-size: 15px; line-height: 1.6; }
+    .doc h2 { font-size: 18px; margin: 28px 0 8px; }
+    .doc h3 { font-size: 15px; margin: 18px 0 4px; }
+    .doc li { margin: 4px 0; }
+    .doc code { font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Methods and caveats</h1>
+      <p class="sub">Oregon Wind Footprint Explorer</p>
+    </div>
+    <nav class="toplinks"><a href="index.html">← Back to map</a></nav>
+  </header>
+
+  <article class="doc">
+    <p>This research prototype turns a box drawn on the map into a summary of what is known about that ocean
+      space from public data. Every number carries a label:</p>
+    <ul>
+      <li><span class="tag measured">measured</span> computed directly from mapped data (area, depth, distance);</li>
+      <li><span class="tag modelled">modelled · relative</span> from NOAA's suitability model, meaningful only relative to other cells;</li>
+      <li><span class="tag context">context</span> describes nearby ports and counties, not what happens inside the box;</li>
+      <li><span class="tag scenario">scenario</span> depends on an assumption you can change.</li>
+    </ul>
+
+    <h2>Where the model data comes from</h2>
+    <p>NOAA's National Centers for Coastal Ocean Science (NCCOS) built a relative suitability model for BOEM's 2022
+      Oregon Call Areas, on a grid of 10-acre hexagons. It combines 30 data layers in four submodels (industry &amp;
+      operations, natural resources, fisheries, wind) plus hard constraints (Department of Defense exclusion area and
+      Coast Guard shipping fairways), using a geometric mean. BOEM used it to draw the 2024 Coos Bay and Brookings
+      Wind Energy Areas, which were rescinded in July 2025.</p>
+    <p>Citation: Carlton J. et al. (2025). <em>NCCOS Assessment: A Wind Energy Area Siting Analysis for the Oregon Call
+      Areas</em>, NCEI Accession 0306723. <a href="https://doi.org/10.25921/hwtb-xm63">doi:10.25921/hwtb-xm63</a>. Report:
+      <a href="https://www.boem.gov/sites/default/files/documents/environment/BOEM_2024-015.pdf">BOEM 2024-015</a>.</p>
+
+    <h3>Important limits</h3>
+    <ul>
+      <li><b>Coverage</b>: only the 2022 Call Areas off Coos Bay/Florence and Brookings/Gold Beach. A box drawn elsewhere has no model data.</li>
+      <li><b>Relative scores</b>: a score of 0.5 can be "High" in one submodel and "Low" in another. Categories are quantiles within each submodel. Compare category mixes, not raw scores across submodels.</li>
+      <li><b>Not for regulatory, legal or navigational use</b> (NOAA's own use limitation).</li>
+    </ul>
+
+    <h2>How each panel is computed</h2>
+    <h3>Footprint</h3>
+    <p>A cell counts as inside the box if its centre falls inside. Modelled area = cells × 10 acres. Depth is ETOPO1
+      (1 arc-minute) interpolated to each cell. Distances are straight-line, from the cell centre to the Census
+      coastline or to the port location.</p>
+    <h3>Fishing grounds</h3>
+    <p>NCCOS's fisheries submodel ranks each cell by importance to nine fisheries using effort and revenue data from
+      NOAA Fisheries and ODFW. Cells in its lowest suitability class are the most important fishing grounds. The
+      headline is the share of all such cells in both Call Areas that fall inside your box. This is a relative index.
+      Translating it into dollars needs per-fishery revenue maps, which aren't public yet.</p>
+    <h3>Ports nearby</h3>
+    <p>For each cell, the nearest of 12 Oregon ports by straight line. Port groups follow ODFW's landing statistics.
+      Revenue is the 2024 ex-vessel value ODFW reports for that port group, from <b>all</b> fishing areas. It shows how
+      much the port depends on each fishery, not how much is caught inside the box. Port locations are approximate.</p>
+    <h3>County economies</h3>
+    <p>U.S. Census County Business Patterns 2023 (businesses with employees) and Nonemployer Statistics 2023
+      (self-employed, which includes most fishing operations). Census noise and suppression flags are carried through
+      as published.</p>
+    <h3>Capacity</h3>
+    <p>Unconstrained modelled area × a power density you choose (2–6 MW/km²; 3 is a common planning value). Homes
+      powered assumes a 45% capacity factor and 10.5 MWh per home per year. It's illustrative, not a project
+      design.</p>
+
+    <h2>Data used</h2>
+    <ul>
+      <li>NOAA NCCOS Oregon WEA siting analysis, NCEI 0306723 (CC0)</li>
+      <li>ODFW Commercial Landing Statistics, 2024 final, by port group</li>
+      <li>NOAA Fisheries FOSS commercial landings, Oregon 2015–2024</li>
+      <li>U.S. Census CBP 2023, Nonemployer Statistics 2023, cartographic boundaries 2023</li>
+      <li>ETOPO1 via NOAA CoastWatch ERDDAP</li>
+      <li>MarineCadastre submarine cables</li>
+      <li>Basemap © OpenStreetMap contributors © CARTO</li>
+    </ul>
+    <p>Only public, aggregated data is used. Nothing here identifies a vessel, permit holder or business.</p>
+
+    <h2>Policy context</h2>
+    <p>Oregon's Offshore Wind Energy Roadmap (DLCD, under HB 4080) was finalized in July 2026 and goes to the 2027
+      Legislature. It describes four paths: no offshore wind, full-scale development, economic participation without
+      hosting projects, or a pilot project. This tool doesn't favour any of them.</p>
+  </article>
+</body>
+</html>

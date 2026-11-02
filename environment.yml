@@ -1,0 +1,19 @@
+# Conda alternative to requirements.txt:  conda env create -f environment.yml && conda activate orwind
+name: orwind
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - geopandas=1.2
+  - pyogrio
+  - shapely
+  - pyproj
+  - pandas
+  - numpy
+  - pyarrow
+  - rasterio
+  - pillow
+  - pdfplumber
+  - requests
+  - pyyaml
+  - nodejs>=18

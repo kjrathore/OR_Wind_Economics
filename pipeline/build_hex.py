@@ -40,6 +40,8 @@ SCORE_LAYERS = [
 CATEGORIES = ["Constrained", "Low", "Moderately Low", "Moderate", "Moderately High", "High"]
 # NCCOS standard palette (DataDocumentation.pdf, Methods 8): red, orange, yellow, light/medium/forest green
 CATEGORY_RGB = [(215, 48, 39), (244, 140, 50), (250, 220, 70), (166, 217, 106), (90, 174, 97), (26, 110, 55)]
+# Colour-blind-safe alternative: grey for constrained + one-hue blue ordinal ramp (validated, dataviz skill)
+CVD_RGB = [(122, 121, 116), (134, 182, 239), (85, 152, 231), (42, 120, 214), (28, 92, 171), (16, 66, 129)]
 
 PIXEL_M = 100  # overlay resolution in EPSG:3857 metres
 
@@ -190,10 +192,13 @@ def render_layers(grid, meta):
     transform = from_origin(xmin, ymax, PIXEL_M, PIXEL_M)
     corners = gpd.GeoSeries(gpd.points_from_xy([xmin, xmax], [ymin, ymax]), crs=MERC).to_crs(WGS84)
     meta["overlay_bounds"] = [[corners.y[0], corners.x[0]], [corners.y[1], corners.x[1]]]  # [[S,W],[N,E]]
+    meta["palettes"] = {"nccos": [f"#{r:02x}{g:02x}{b:02x}" for r, g, b in CATEGORY_RGB],
+                        "cvd": [f"#{r:02x}{g:02x}{b:02x}" for r, g, b in CVD_RGB]}
 
     out = WEB_DATA / "layers"
     out.mkdir(parents=True, exist_ok=True)
-    palette = np.array(CATEGORY_RGB + [(0, 0, 0)] * (256 - len(CATEGORY_RGB)), dtype=np.uint8)
+    palettes = {"": CATEGORY_RGB, "_cvd": CVD_RGB}
+    palettes = {k: np.array(v + [(0, 0, 0)] * (256 - len(v)), dtype=np.uint8) for k, v in palettes.items()}
     meta["overlays"] = {}
     for col, _, _, label, has_cat in SCORE_LAYERS:
         if has_cat:
@@ -208,11 +213,12 @@ def render_layers(grid, meta):
             vals = np.where(v <= 0, 0, 1 + np.searchsorted(breaks, v, side="right"))
         band = rasterio.features.rasterize(
             zip(g.geometry, vals), out_shape=(h, w), transform=transform, fill=255, dtype="uint8")
-        rgba = np.zeros((h, w, 4), dtype=np.uint8)
-        rgba[..., :3] = palette[band]
-        rgba[..., 3] = np.where(band == 255, 0, 210)
-        Image.fromarray(rgba, "RGBA").save(out / f"{col}.png", optimize=True)
-        meta["overlays"][col] = {"file": f"layers/{col}.png", "label": label,
+        for suffix, palette in palettes.items():
+            rgba = np.zeros((h, w, 4), dtype=np.uint8)
+            rgba[..., :3] = palette[band]
+            rgba[..., 3] = np.where(band == 255, 0, 255)
+            Image.fromarray(rgba, "RGBA").save(out / f"{col}{suffix}.png", optimize=True)
+        meta["overlays"][col] = {"file": f"layers/{col}.png", "file_cvd": f"layers/{col}_cvd.png", "label": label,
                                  "legend": "nccos_categories" if has_cat else ("constraint" if col == "constraint" else "quintiles")}
 
 
