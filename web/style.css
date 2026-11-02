@@ -162,7 +162,7 @@ details.ctx label { display: block; font-size: 12px; margin-top: 4px; color: var
 .meter > div { height: 100%; background: var(--series-1); border-radius: 0 4px 4px 0; }
 
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 4px; }
-.tabs .chip[aria-selected="true"] { background: var(--text-primary); color: var(--surface-1); border-color: transparent; }
+.tabs .chip[aria-selected="true"], .tabs .chip[aria-checked="true"] { background: var(--text-primary); color: var(--surface-1); border-color: transparent; }
 
 table.kv { width: 100%; border-collapse: collapse; font-size: 12px; }
 table.kv th { text-align: left; font-weight: 500; color: var(--text-secondary); padding: 4px 0; }
@@ -170,6 +170,8 @@ table.kv td { text-align: right; padding: 4px 0; font-variant-numeric: tabular-n
 table.kv thead th { color: var(--text-muted); font-weight: 500; border-bottom: 1px solid var(--hairline); }
 table.kv thead th:not(:first-child) { text-align: right; }
 table.kv tbody tr + tr th, table.kv tbody tr + tr td { border-top: 1px solid var(--hairline); }
+table.kv th.group { color: var(--text-primary); font-weight: 600; padding-top: 10px; }
+.subhead { font-size: 13px; font-weight: 600; margin: 14px 0 0; }
 
 .slider-row { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-secondary); margin-top: 6px; }
 .slider-row input { flex: 1; }

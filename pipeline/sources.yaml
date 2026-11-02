@@ -119,6 +119,19 @@ sources:
     coverage: US waters
     cite: NOAA Office for Coastal Management, MarineCadastre.gov, Submarine Cables.
 
+  - id: nrel_2016_oregon
+    title: NREL (2016) Floating Offshore Wind in Oregon - jobs and economic impacts (OCS Study BOEM 2016-030)
+    files:
+      - {url: "https://www.boem.gov/sites/default/files/environmental-stewardship/Environmental-Studies/Pacific-Region/Studies/BOEM-2016-030.pdf", name: BOEM-2016-030.pdf}
+    license: US Government work (public domain)
+    access: public
+    vintage: 2016 report; 2014 dollars; scenarios 2020-2050
+    coverage: Oregon statewide
+    cite: >-
+      Jimenez T, Keyser D, Tegen S, Speer B (2016). Floating Offshore Wind in Oregon: Potential for Jobs and
+      Economic Impacts from Two Future Scenarios. NREL/TP-5000-65421; OCS Study BOEM 2016-030.
+    note: values transcribed with page references in pipeline/nrel_2016_jobs.yaml
+
 # ---------------------------------------------------------------------------
 # Restricted / not-yet-public sources. Listed so the gap is visible.
 # fetch.py skips these. Request access via the research project (see TODO.md).

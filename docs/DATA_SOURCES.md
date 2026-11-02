@@ -16,6 +16,7 @@ State as of **2026-11-02**.
 | **Census cartographic counties 1:500k** | County outlines, land mask for distance-to-shore | 2023 | US | Public domain |
 | **ETOPO1 via CoastWatch ERDDAP** | Depth at each hex (bilinear, 1-arcmin ≈ 1.8 km) | 2009 | 41.8–46.4N | Public domain |
 | **MarineCadastre submarine cables** | Existing cable corridors | per metadata | US | Public domain |
+| **NREL 2016 Oregon floating wind jobs study** (OCS Study BOEM 2016-030) | Statewide construction & O&M jobs and GDP for 2.9 GW and 5.5 GW build-outs, low/high local content → per-MW factors (`pipeline/nrel_2016_jobs.yaml`, page-referenced) | 2016; 2014 $ | Oregon | Public domain |
 | `pipeline/ports.csv` (hand-curated) | 12 port locations → ODFW port group → county | — | Oregon | approximate coordinates; verify vs USGS GNIS |
 
 ### Checks performed on build

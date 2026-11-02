@@ -101,6 +101,12 @@
     "sha256": "6e0468d670e7e38a154de70e92953f41e5f63cb10925bef306f1aa86d543640e",
     "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2024%7D&limit=10000"
   },
+  "nrel_2016_oregon/BOEM-2016-030.pdf": {
+    "bytes": 1189316,
+    "fetched": "2026-11-02",
+    "sha256": "d5ed60afe135ad8afb0e679d5567312819e4db165375d92ccf47897652dc8d09",
+    "url": "https://www.boem.gov/sites/default/files/environmental-stewardship/Environmental-Studies/Pacific-Region/Studies/BOEM-2016-030.pdf"
+  },
   "odfw_landings_2024/2015-2024 10 year landings.pdf": {
     "bytes": 271482,
     "fetched": "2026-11-02",

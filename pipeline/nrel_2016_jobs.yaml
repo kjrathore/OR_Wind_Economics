@@ -1,0 +1,35 @@
+# Statewide Oregon economic impacts of floating offshore wind, transcribed from:
+#   Jimenez T, Keyser D, Tegen S, Speer B (2016). Floating Offshore Wind in Oregon: Potential for Jobs
+#   and Economic Impacts from Two Future Scenarios. NREL/TP-5000-65421, OCS Study BOEM 2016-030.
+#   PDF: data/raw/nrel_2016_oregon/BOEM-2016-030.pdf  (page numbers below are PDF pages)
+#
+# Each value is [low local content, high local content]. Dollars are 2014 USD.
+# build_econ.py divides by `mw` to get per-MW factors for the dashboard's capacity scenario.
+
+cite: >-
+  Jimenez T, Keyser D, Tegen S, Speer B (2016). Floating Offshore Wind in Oregon: Potential for Jobs and
+  Economic Impacts from Two Future Scenarios. NREL/TP-5000-65421; OCS Study BOEM 2016-030.
+dollar_year: 2014
+scenarios:
+  B:
+    label: Smaller in-state supply chain
+    description: Oregon builds 2.9 GW by 2050 (NREL Scenario B); slower supply-chain growth.
+    mw: 2900                                   # p6, p17 (Table 3-1 sum)
+    construction_job_years: [13000, 21000]     # p27 §4.1.1
+    # Table 4-1 (p26) average annual construction-phase GDP by decade, x10 years each:
+    #   2020-30 $23-34M, 2030-40 $55-85M, 2040-50 $56-87M
+    construction_gdp_usd: [1340000000, 2060000000]
+    operations_jobs: [950, 1400]               # p29 Table 4-3, 2050 total (all 2.9 GW operating)
+    operations_gdp_usd_per_year: [100000000, 140000000]   # p29 Table 4-3, 2050 GDP total
+    construction_earnings_per_job: 69000       # p27 Table 4-2 overall
+    operations_earnings_per_job: 72000         # p29 Table 4-4 overall
+  A:
+    label: Larger in-state supply chain
+    description: Oregon builds 5.5 GW by 2050 (NREL Scenario A); suppliers expand in-state.
+    mw: 5500                                   # p6
+    construction_job_years: [44000, 66000]     # p6 executive summary (§4.1.1 on p27 says 45,000-66,000)
+    construction_gdp_usd: [4600000000, 5700000000]        # p6 executive summary
+    operations_jobs: [2300, 3300]              # p29 Table 4-3, 2050 total (ES p6 rounds to 3,400)
+    operations_gdp_usd_per_year: [250000000, 340000000]   # p29 Table 4-3, 2050 GDP total
+    construction_earnings_per_job: 70000       # p27 Table 4-2 overall
+    operations_earnings_per_job: 71000         # p29 Table 4-4 overall

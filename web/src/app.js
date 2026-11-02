@@ -19,7 +19,7 @@ const fmt = {
 };
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
-const state = { box: null, layer: "final", cvd: false, opacity: 0.75, density: 3, portTab: null };
+const state = { box: null, layer: "final", cvd: false, opacity: 0.75, density: 3, supply: "B", portTab: null };
 let store, econ, map;
 
 // ------------------------------------------------------------------ boot
@@ -41,6 +41,8 @@ function readHash() {
   if (b?.length === 4 && b.every(Number.isFinite)) state.box = b;
   if (p.get("layer")) state.layer = p.get("layer");
   if (p.get("cvd") === "1") state.cvd = true;
+  if (["A", "B"].includes(p.get("supply"))) state.supply = p.get("supply");
+  if (+p.get("density") >= 2 && +p.get("density") <= 6) state.density = +p.get("density");
 }
 
 function writeHash() {
@@ -48,6 +50,8 @@ function writeHash() {
   if (state.box) p.set("box", state.box.map((v) => v.toFixed(4)).join(","));
   p.set("layer", state.layer);
   if (state.cvd) p.set("cvd", "1");
+  if (state.supply !== "B") p.set("supply", state.supply);
+  if (state.density !== 3) p.set("density", state.density);
   history.replaceState(null, "", "#" + p.toString());
 }
 
@@ -544,16 +548,65 @@ function renderCounties(r) {
     `</tbody></table><p class="small muted">Census CBP &amp; Nonemployer Statistics 2023. "~" = high Census noise; "–" = not published.</p>`;
 }
 
+// Capacity → statewide jobs & spending, scaled linearly from NREL 2016 Oregon scenarios.
+// Controls are built once and only the numbers are updated, so the slider keeps working mid-drag.
+let capacitySummary = null;
+const BUILD_YEARS = 3; // assumed construction period used to express job-years as jobs per year
+
 function renderCapacity(r) {
+  capacitySummary = r;
   const el = $("capacity");
+  if (!el.dataset.ready) {
+    const sc = econ.jobs.scenarios;
+    el.innerHTML =
+      `<div class="hero"><span id="cap-mw"></span> <span class="unit" style="font-size:14px;font-weight:400">MW</span></div>` +
+      `<div class="hero-sub" id="cap-sub"></div>` +
+      `<div class="slider-row"><label for="rng-density">Density</label><input id="rng-density" type="range" min="2" max="6" step="0.5" value="${state.density}"><span id="cap-density"></span></div>` +
+      `<p class="small muted" id="cap-homes"></p>` +
+      `<h3 class="subhead">Jobs &amp; spending in Oregon</h3>` +
+      `<div class="tabs" role="radiogroup" aria-label="In-state supply chain">` +
+      Object.entries(sc).map(([k, s]) =>
+        `<button class="chip" role="radio" data-supply="${k}" title="${esc(s.description)}">${esc(s.label)}</button>`).join("") +
+      `</div>` +
+      `<table class="kv"><thead><tr><th></th><th>low – high local content</th></tr></thead><tbody>` +
+      `<tr><th colspan="2" class="group">Construction · one time</th></tr>` +
+      `<tr><th>Job-years</th><td id="cj-years"></td></tr>` +
+      `<tr><th>≈ Jobs per year over a ${BUILD_YEARS}-year build</th><td id="cj-annual"></td></tr>` +
+      `<tr><th>Added to Oregon GDP</th><td id="cj-gdp"></td></tr>` +
+      `<tr><th colspan="2" class="group">Operations · every year, ~25-year life</th></tr>` +
+      `<tr><th>Ongoing jobs</th><td id="oj-jobs"></td></tr>` +
+      `<tr><th>Added to Oregon GDP per year</th><td id="oj-gdp"></td></tr>` +
+      `<tr><th>Average pay (wages + benefits)</th><td id="oj-pay"></td></tr>` +
+      `</tbody></table>` +
+      `<p class="small muted">Statewide Oregon totals (direct, supply-chain and induced), scaled in proportion to MW from ` +
+      `NREL's 2016 Oregon study; ${econ.jobs.dollar_year} dollars. Small or first projects usually buy less in-state, so the ` +
+      `"smaller" setting is the realistic one below a few hundred MW. How many jobs land on the coast depends on which ports ` +
+      `host staging and maintenance. <a href="methods.html#jobs">How this is calculated</a></p>`;
+    el.dataset.ready = "1";
+    $("rng-density").oninput = (e) => { state.density = +e.target.value; renderCapacity(capacitySummary); writeHash(); };
+    el.querySelectorAll("[data-supply]").forEach((b) => {
+      b.onclick = () => { state.supply = b.dataset.supply; renderCapacity(capacitySummary); writeHash(); };
+    });
+  }
+
   const mw = r.unconstrainedKm2 * state.density;
-  el.innerHTML =
-    `<div class="hero">${fmt.int(mw)} <span class="unit" style="font-size:14px;font-weight:400">MW</span></div>` +
-    `<div class="hero-sub">if the ${fmt.int(r.unconstrainedKm2)} km² of unconstrained area were built at ${state.density} MW/km²</div>` +
-    `<div class="slider-row"><span>Density</span><input id="rng-density" type="range" min="2" max="6" step="0.5" value="${state.density}"><span>${state.density} MW/km²</span></div>` +
-    `<p class="small muted">≈${fmt.int(mw * 1e3 * 8760 * 0.45 / 1e6 / 10.5)}k Oregon homes at a 45% capacity factor and 10.5 MWh/home/yr. Illustrative only; ` +
-    `job and spending estimates come in a later version.</p>`;
-  $("rng-density").oninput = (e) => { state.density = +e.target.value; renderCapacity(r); };
+  const s = econ.jobs.scenarios[state.supply];
+  const range = ([lo, hi], f) => (f(lo) === f(hi) ? f(lo) : `${f(lo)} – ${f(hi)}`);
+  const times = (v) => v.map((x) => x * mw);
+  const round = (v) => fmt.int(v < 100 ? v : v < 1000 ? Math.round(v / 10) * 10 : Math.round(v / 100) * 100);
+
+  $("cap-mw").textContent = fmt.int(mw);
+  $("cap-sub").textContent = `if the ${fmt.int(r.unconstrainedKm2)} km² of unconstrained area were built at ${state.density} MW/km²`;
+  $("cap-density").textContent = `${state.density} MW/km²`;
+  $("cap-homes").textContent = `≈${fmt.int(mw * 8760 * 0.45 / 10.5 / 1000)}k Oregon homes' electricity at a 45% capacity factor and 10.5 MWh per home per year.`;
+  document.querySelectorAll("[data-supply]").forEach((b) => b.setAttribute("aria-checked", String(b.dataset.supply === state.supply)));
+
+  $("cj-years").textContent = range(times(s.construction_job_years_per_mw), round);
+  $("cj-annual").textContent = range(times(s.construction_job_years_per_mw).map((v) => v / BUILD_YEARS), round);
+  $("cj-gdp").textContent = range(times(s.construction_gdp_per_mw), fmt.usd);
+  $("oj-jobs").textContent = range(times(s.operations_jobs_per_mw), round);
+  $("oj-gdp").textContent = range(times(s.operations_gdp_per_mw_year), fmt.usd);
+  $("oj-pay").textContent = `~${fmt.usd(s.operations_earnings_per_job)}`;
 }
 
 boot().catch((err) => {

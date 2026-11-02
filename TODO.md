@@ -21,6 +21,7 @@ Legend: `[x]` done · `[ ]` open · **P1** next up · (R) needs restricted-data 
 - [x] Port panel: 2024 ODFW revenue by fishery for nearest port groups, tagged "context"
 - [x] County panel: fishing employers + nonemployers, seafood processing, lodging/food, total jobs
 - [x] Capacity scenario (MW/km² slider, homes equivalent)
+- [x] Jobs & spending: construction job-years, ongoing O&M jobs, Oregon GDP, scaled from NREL 2016 (2.9 vs 5.5 GW supply chain; low–high local content)
 - [x] "Outside model coverage" / partial-coverage messages
 - [x] Presets: 2024 Coos Bay WEA, Brookings WEA, pilot-scale (~17 km²)
 - [x] Methods & caveats page; evidence tags (measured / modelled / context / scenario)
@@ -46,7 +47,8 @@ Legend: `[x]` done · `[ ]` open · **P1** next up · (R) needs restricted-data 
 - [ ] Multi-year ranges: parse ODFW port PDFs for 2015–2023 (same FTR205 format) — add years to sources.yaml
 - [ ] NOAA Social Indicators for Coastal Communities (fishing engagement/reliance) — find bulk download
 - [ ] NOAA ENOW county ocean economy (tourism & recreation, living resources) — locate bulk file
-- [ ] Capacity slider (MW/km²) + NREL 2016 jobs scaling with in-state-content slider
+- [ ] Update jobs factors: inflate 2014 $ to current $ (BLS CPI) or swap in a newer JEDI / NREL West Coast run; consider coastal-county share of jobs
+- [ ] Reverse mode: choose a target MW (e.g. 100 MW pilot, 1 GW) and size the box to match, for equal-capacity comparisons
 - [ ] Compare two footprints side by side; export a one-page PDF/PNG summary
 - [ ] Verify `ports.csv` coordinates against USGS GNIS; add Columbia River ports if relevant
 - [ ] Unit tests: ODFW parser on a known year, HexStore against geopandas spatial join

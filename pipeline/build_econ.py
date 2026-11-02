@@ -15,6 +15,7 @@ import re
 
 import pandas as pd
 import pdfplumber
+import yaml
 
 from common import COASTAL_COUNTIES, FISHERY_LABELS, NAICS, PROCESSED, RAW, ROOT, WEB_DATA, fishery_group
 
@@ -91,6 +92,27 @@ def county_industry():
     return df.drop(columns="fipscty").sort_values(["county_fips", "code", "source"])
 
 
+def jobs_factors():
+    """Per-MW statewide impact factors from NREL 2016 (see pipeline/nrel_2016_jobs.yaml)."""
+    src = yaml.safe_load((ROOT / "pipeline" / "nrel_2016_jobs.yaml").read_text())
+    per_mw = lambda v, mw: [x / mw for x in v] if isinstance(v, list) else v
+    out = {"cite": src["cite"].strip(), "dollar_year": src["dollar_year"], "scenarios": {}}
+    for key, s in src["scenarios"].items():
+        mw = s["mw"]
+        out["scenarios"][key] = {
+            "label": s["label"],
+            "description": s["description"],
+            "reference_mw": mw,
+            "construction_job_years_per_mw": per_mw(s["construction_job_years"], mw),
+            "construction_gdp_per_mw": per_mw(s["construction_gdp_usd"], mw),
+            "operations_jobs_per_mw": per_mw(s["operations_jobs"], mw),
+            "operations_gdp_per_mw_year": per_mw(s["operations_gdp_usd_per_year"], mw),
+            "construction_earnings_per_job": s["construction_earnings_per_job"],
+            "operations_earnings_per_job": s["operations_earnings_per_job"],
+        }
+    return out
+
+
 def main():
     PROCESSED.mkdir(parents=True, exist_ok=True)
     ports = odfw_ports()
@@ -123,10 +145,12 @@ def main():
             ]
             for fips, sub in county.groupby("county_fips")
         },
+        "jobs": jobs_factors(),
         "sources": {
             "port_groups": "ODFW Commercial Landing Statistics 2024 Final (ex-vessel $)",
             "state_by_year": "NOAA Fisheries FOSS commercial landings, Oregon",
             "counties": "U.S. Census Bureau CBP 2023 (employers) and Nonemployer Statistics 2023",
+            "jobs": "NREL 2016 / OCS Study BOEM 2016-030 (statewide JEDI scenarios, 2014 $)",
         },
     }
     WEB_DATA.mkdir(parents=True, exist_ok=True)
