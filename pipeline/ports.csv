@@ -1,0 +1,13 @@
+port,odfw_group,county_fips,lat,lon,note
+Astoria,ASTORIA,41007,46.1890,-123.8310,approximate harbor location; verify against USGS GNIS
+Garibaldi,GEARHART-SEASIDE-CANNON BEACH-NEHALEM BAY-GARIBALDI,41057,45.5580,-123.9100,approximate harbor location; verify against USGS GNIS
+Pacific City,NETARTS-DEPOE BAY,41057,45.2020,-123.9620,dory fleet beach launch; approximate
+Depoe Bay,NETARTS-DEPOE BAY,41041,44.8090,-124.0630,approximate harbor location; verify against USGS GNIS
+Newport,NEWPORT,41041,44.6270,-124.0550,approximate harbor location; verify against USGS GNIS
+Florence,WALDPORT TO WINCHESTER BAY,41039,43.9670,-124.1050,approximate harbor location; verify against USGS GNIS
+Winchester Bay,WALDPORT TO WINCHESTER BAY,41019,43.6800,-124.1770,approximate harbor location; verify against USGS GNIS
+Charleston (Coos Bay),CHARLESTON,41011,43.3450,-124.3300,approximate harbor location; verify against USGS GNIS
+Bandon,BANDON - PORT ORFORD,41011,43.1190,-124.4120,approximate harbor location; verify against USGS GNIS
+Port Orford,BANDON - PORT ORFORD,41015,42.7400,-124.4970,approximate harbor location; verify against USGS GNIS
+Gold Beach,GOLD BEACH - BROOKINGS,41015,42.4070,-124.4220,approximate harbor location; verify against USGS GNIS
+Brookings,GOLD BEACH - BROOKINGS,41015,42.0450,-124.2680,approximate harbor location; verify against USGS GNIS

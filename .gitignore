@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Data: never committed. Raw data is re-fetched from public sources (pipeline/sources.yaml),
+# outputs are rebuilt with `make build`. Restricted data must never live inside this repo.
+data/raw/*
+data/processed/
+data/restricted/
+web/data/
+*.part
+
+# Keep the lock file so builds are traceable to exact source bytes
+!data/raw/MANIFEST.lock.json
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

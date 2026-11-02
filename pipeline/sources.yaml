@@ -1,0 +1,138 @@
+# Data source manifest. Every file the pipeline uses must be listed here.
+# Only PUBLIC data goes in this file — see docs/DATA_POLICY.md.
+#
+# Fields:
+#   id        short slug; files land in data/raw/<id>/
+#   files     list of {url, name}; name is the local filename
+#   license   license / access terms as published by the provider
+#   access    public | restricted   (restricted sources are NOT fetched by fetch.py)
+#   vintage   time period the data describes
+#   coverage  spatial coverage
+#   cite      citation to use in the app and in papers
+
+sources:
+
+  - id: nccos_oregon_2023
+    title: NCCOS Wind Energy Area Siting Analysis for the Oregon Call Areas (NCEI 0306723)
+    files:
+      - url: https://www.ncei.noaa.gov/data/oceans/archive/arc0240/0306723/1.1/data/0-data/WindEnergyAnalysis_Oregon_Shapefiles.zip
+        name: WindEnergyAnalysis_Oregon_Shapefiles.zip
+        unzip: true
+      - url: https://www.ncei.noaa.gov/data/oceans/archive/arc0240/0306723/1.1/data/0-data/NCCOS_WindEnergyAnalysis_Oregon_GIS/DataDocumentation.pdf
+        name: DataDocumentation.pdf
+    license: CC0-1.0 (public domain)
+    access: public
+    vintage: 2014-11-24 to 2024-02-14 (model run 2023)
+    coverage: BOEM 2022 Oregon Call Areas only (Coos Bay, Brookings)
+    cite: >-
+      Carlton J, Jossart JA, Pendleton F, et al. (2025). NCCOS Assessment: A Wind Energy Area
+      Siting Analysis for the Oregon Call Areas, 2014-11-24 to 2024-02-14 (NCEI Accession 0306723).
+      NOAA NCEI. https://doi.org/10.25921/hwtb-xm63
+
+  - id: odfw_landings_2024
+    title: ODFW Pounds and Values of Commercially Caught Fish and Shellfish Landed in Oregon, by port group, 2024 (final)
+    files:
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20ASTORIA.pdf", name: "2024 - ASTORIA.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20GEARHART-SEASIDE-CANNON%20BEACH-NEHALEM%20BAY-GARIBALDI.pdf", name: "2024 - GEARHART-SEASIDE-CANNON BEACH-NEHALEM BAY-GARIBALDI.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20NETARTS-DEPOE%20BAY.pdf", name: "2024 - NETARTS-DEPOE BAY.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20NEWPORT.pdf", name: "2024 - NEWPORT.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20WALDPORT%20TO%20WINCHESTER%20BAY.pdf", name: "2024 - WALDPORT TO WINCHESTER BAY.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20CHARLESTON.pdf", name: "2024 - CHARLESTON.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20BANDON%20-%20PORT%20ORFORD.pdf", name: "2024 - BANDON - PORT ORFORD.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20GOLD%20BEACH%20-%20BROOKINGS.pdf", name: "2024 - GOLD BEACH - BROOKINGS.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2015-2024%2010%20year%20landings.pdf", name: "2015-2024 10 year landings.pdf"}
+      - {url: "https://www.dfw.state.or.us/fish/commercial/landing_stats/EXPLANATION.pdf", name: EXPLANATION.pdf}
+    license: Public state agency publication (aggregated; ODFW applies its own confidentiality screening before release)
+    access: public
+    vintage: calendar year 2024 (10-year table 2015-2024)
+    coverage: Oregon ocean port groups
+    cite: Oregon Department of Fish and Wildlife, Commercial Landing Statistics, 2024 Final. https://www.dfw.state.or.us/fish/commercial/landing_stats/
+
+  - id: noaa_foss_oregon
+    title: NOAA Fisheries One Stop Shop (FOSS) commercial landings, Oregon, by species and year
+    files:
+      # one request per year: the API gateway rejects range operators ($gte)
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2015%7D&limit=10000", name: foss_oregon_2015.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2016%7D&limit=10000", name: foss_oregon_2016.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2017%7D&limit=10000", name: foss_oregon_2017.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2018%7D&limit=10000", name: foss_oregon_2018.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2019%7D&limit=10000", name: foss_oregon_2019.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2020%7D&limit=10000", name: foss_oregon_2020.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2021%7D&limit=10000", name: foss_oregon_2021.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2022%7D&limit=10000", name: foss_oregon_2022.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2023%7D&limit=10000", name: foss_oregon_2023.json}
+      - {url: "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2024%7D&limit=10000", name: foss_oregon_2024.json}
+    license: US Government work (public domain)
+    access: public
+    vintage: 2015-latest available
+    coverage: Oregon statewide
+    cite: NOAA Fisheries Office of Science and Technology, Commercial Landings, FOSS. https://www.fisheries.noaa.gov/foss
+
+  - id: census_cbp_2023
+    title: Census County Business Patterns 2023, county file
+    files:
+      - {url: "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23co.zip", name: cbp23co.zip, unzip: true}
+    license: US Government work (public domain); Census applies disclosure avoidance (noise flags, suppression)
+    access: public
+    vintage: 2023 (employer establishments)
+    coverage: all US counties
+    cite: U.S. Census Bureau, 2023 County Business Patterns.
+
+  - id: census_nes_2023
+    title: Census Nonemployer Statistics 2023, county file (self-employed incl. most fishing operations)
+    files:
+      - {url: "https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23co.zip", name: nonemp23co.zip, unzip: true}
+    license: US Government work (public domain); Census disclosure avoidance applied
+    access: public
+    vintage: 2023
+    coverage: all US counties
+    cite: U.S. Census Bureau, 2023 Nonemployer Statistics.
+
+  - id: census_counties_2023
+    title: Census cartographic boundary file, counties, 1:500k, 2023
+    files:
+      - {url: "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_500k.zip", name: cb_2023_us_county_500k.zip, unzip: true}
+    license: US Government work (public domain)
+    access: public
+    vintage: 2023
+    coverage: US
+    cite: U.S. Census Bureau, 2023 Cartographic Boundary Files.
+
+  - id: etopo_or
+    title: ETOPO1 bathymetry/topography subset, Oregon shelf (via NOAA CoastWatch ERDDAP etopo180)
+    files:
+      - url: "https://coastwatch.pfeg.noaa.gov/erddap/griddap/etopo180.csv?altitude%5B(41.8):1:(46.4)%5D%5B(-126.6):1:(-123.7)%5D"
+        name: etopo180_oregon.csv
+    license: US Government work (public domain)
+    access: public
+    vintage: ETOPO1 (2009), 1 arc-minute (~1.8 km)
+    coverage: 41.8-46.4N, 126.6-123.7W
+    cite: Amante C, Eakins BW (2009). ETOPO1 1 Arc-Minute Global Relief Model. NOAA NGDC. doi:10.7289/V5C8276M
+
+  - id: marinecadastre_cables
+    title: MarineCadastre Submarine Cables
+    files:
+      - {url: "https://marinecadastre.gov/downloads/data/mc/SubmarineCable.zip", name: SubmarineCable.zip, unzip: true}
+    license: US Government work (public domain)
+    access: public
+    vintage: per provider metadata
+    coverage: US waters
+    cite: NOAA Office for Coastal Management, MarineCadastre.gov, Submarine Cables.
+
+# ---------------------------------------------------------------------------
+# Restricted / not-yet-public sources. Listed so the gap is visible.
+# fetch.py skips these. Request access via the research project (see TODO.md).
+# ---------------------------------------------------------------------------
+restricted:
+  - id: pacfin_fish_tickets
+    title: PacFIN fish-ticket level landings (vessel/dealer level)
+    why: Port × fishery × month revenue at fine resolution; confidential below rule-of-3.
+    route: PSMFC PacFIN data access agreement (academic)
+  - id: vms_logbooks
+    title: NMFS VMS / ODFW logbook positions per fishery
+    why: Spatial distribution of revenue per fishery coast-wide (beyond the Call Areas).
+    route: NMFS NWFSC / ODFW data request; OROWindMap publishes aggregated effort maps (2010-2020)
+  - id: nccos_input_layers
+    title: Individual NCCOS input layers marked "unpublished" (DoD exclusion, per-fishery ranked importance)
+    why: Per-fishery exposure instead of the combined fisheries score.
+    route: NCCOS / BOEM data contact listed in DataDocumentation.pdf

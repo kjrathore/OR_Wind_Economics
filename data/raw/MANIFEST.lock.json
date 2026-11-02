@@ -1,0 +1,164 @@
+{
+  "census_cbp_2023/cbp23co.zip": {
+    "bytes": 12919520,
+    "fetched": "2026-11-02",
+    "sha256": "e9539e96ceb91608ad44ab1cfc651d7c1ff9b88bddfe7a8ff64134ccde6e9603",
+    "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23co.zip"
+  },
+  "census_counties_2023/cb_2023_us_county_500k.zip": {
+    "bytes": 11630077,
+    "fetched": "2026-11-02",
+    "sha256": "99d6597b1fc7767deef62e01d28d8b5dcbd578e151855f7dc0d173cbf5bf0868",
+    "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_500k.zip"
+  },
+  "census_nes_2023/nonemp23co.zip": {
+    "bytes": 4420852,
+    "fetched": "2026-11-02",
+    "sha256": "65030a96b0e5542ca7b52aa954c2c66cf1cff0f936e8b2b225375d3d186bac28",
+    "url": "https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23co.zip"
+  },
+  "etopo_or/etopo180_oregon.csv": {
+    "bytes": 1909385,
+    "fetched": "2026-11-02",
+    "sha256": "806109ed7629a22e3eaa5f50afa9357df616cbd14106678823222ee22b99b669",
+    "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/etopo180.csv?altitude%5B(41.8):1:(46.4)%5D%5B(-126.6):1:(-123.7)%5D"
+  },
+  "marinecadastre_cables/SubmarineCable.zip": {
+    "bytes": 8027218,
+    "fetched": "2026-11-02",
+    "sha256": "d318bf25dc5fd122a26e015aac70740f8c1cc1dad552161168c4bb2db40dd276",
+    "url": "https://marinecadastre.gov/downloads/data/mc/SubmarineCable.zip"
+  },
+  "nccos_oregon_2023/DataDocumentation.pdf": {
+    "bytes": 437380,
+    "fetched": "2026-11-02",
+    "sha256": "6ecbbef1135384204c42d9b99b2ca26c9ff8ecec99dc8f72a2b9d308f08f9031",
+    "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0240/0306723/1.1/data/0-data/NCCOS_WindEnergyAnalysis_Oregon_GIS/DataDocumentation.pdf"
+  },
+  "nccos_oregon_2023/WindEnergyAnalysis_Oregon_Shapefiles.zip": {
+    "bytes": 68153644,
+    "fetched": "2026-11-02",
+    "sha256": "a335a6aaf66c21acd9d35d33f76fed56bf68c19294904c3b7ab3cb5f2099721f",
+    "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0240/0306723/1.1/data/0-data/WindEnergyAnalysis_Oregon_Shapefiles.zip"
+  },
+  "noaa_foss_oregon/foss_oregon_2015.json": {
+    "bytes": 74961,
+    "fetched": "2026-11-02",
+    "sha256": "1dd27514e15d163ab0b155beeebcd0ae7cda988fe2cdc0b71a41e01dfcc8446d",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2015%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2016.json": {
+    "bytes": 74452,
+    "fetched": "2026-11-02",
+    "sha256": "00c78a52f35420ba15bedd8021bba7860b4b6c0e5447f68fd0ae6044250c54f5",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2016%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2017.json": {
+    "bytes": 79785,
+    "fetched": "2026-11-02",
+    "sha256": "b1a718891bb7cc98fd8da78263e58340c5a9858ae1e4662dc13cdfa87cc3cfe7",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2017%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2018.json": {
+    "bytes": 79632,
+    "fetched": "2026-11-02",
+    "sha256": "633d71bb7028ea573135c6c4906dd26fc7640e95c573521aebca9c15bee6fa3f",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2018%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2019.json": {
+    "bytes": 79646,
+    "fetched": "2026-11-02",
+    "sha256": "97a45a742d177ae9deb09a82ebcdd23d01a6ef5446d5f2c4b45c83ccfdc9c461",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2019%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2020.json": {
+    "bytes": 80270,
+    "fetched": "2026-11-02",
+    "sha256": "588c55e317b9fa2be0a8c013e0511820c754456a44173a86929cc7a80c276dea",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2020%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2021.json": {
+    "bytes": 75766,
+    "fetched": "2026-11-02",
+    "sha256": "267595ad466a7b4cbd3b4dc118538a5b97eae9fe58d67daeb04fc191529bd509",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2021%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2022.json": {
+    "bytes": 81923,
+    "fetched": "2026-11-02",
+    "sha256": "8fedb98f9b4dd6dba9032ef9f5e720ec0865f8419287f488cf8b0de4420009c2",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2022%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2023.json": {
+    "bytes": 79805,
+    "fetched": "2026-11-02",
+    "sha256": "274b81868b6c0d1e8b55e1ae070478d8f7d134ea23c514b7e17642e49f2034fe",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2023%7D&limit=10000"
+  },
+  "noaa_foss_oregon/foss_oregon_2024.json": {
+    "bytes": 76598,
+    "fetched": "2026-11-02",
+    "sha256": "6e0468d670e7e38a154de70e92953f41e5f63cb10925bef306f1aa86d543640e",
+    "url": "https://apps-st.fisheries.noaa.gov/ods/foss/landings/?q=%7B%22state_name%22:%22OREGON%22,%22year%22:2024%7D&limit=10000"
+  },
+  "odfw_landings_2024/2015-2024 10 year landings.pdf": {
+    "bytes": 271482,
+    "fetched": "2026-11-02",
+    "sha256": "068313498a12252245ec00822fb6929b32cd98baa06c2f92df63249e55e70e83",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2015-2024%2010%20year%20landings.pdf"
+  },
+  "odfw_landings_2024/2024 - ASTORIA.pdf": {
+    "bytes": 224659,
+    "fetched": "2026-11-02",
+    "sha256": "ebd3d6e3e1cc9f7736b61fb33e343111d647abf3e37d8383ad31340a63099536",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20ASTORIA.pdf"
+  },
+  "odfw_landings_2024/2024 - BANDON - PORT ORFORD.pdf": {
+    "bytes": 196022,
+    "fetched": "2026-11-02",
+    "sha256": "cb464e84704344e2578213af57f072ee4e61b8222299636791a4c1c4961b93c1",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20BANDON%20-%20PORT%20ORFORD.pdf"
+  },
+  "odfw_landings_2024/2024 - CHARLESTON.pdf": {
+    "bytes": 218232,
+    "fetched": "2026-11-02",
+    "sha256": "2e97ae81904e6b872f495535ecb53ccae1dcc707bc53a4d2ff3de30b3742802f",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20CHARLESTON.pdf"
+  },
+  "odfw_landings_2024/2024 - GEARHART-SEASIDE-CANNON BEACH-NEHALEM BAY-GARIBALDI.pdf": {
+    "bytes": 176287,
+    "fetched": "2026-11-02",
+    "sha256": "d5409a5e5af11827b99b2de9ecd26c96940a93c18a739c111a62a7770c5a74e1",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20GEARHART-SEASIDE-CANNON%20BEACH-NEHALEM%20BAY-GARIBALDI.pdf"
+  },
+  "odfw_landings_2024/2024 - GOLD BEACH - BROOKINGS.pdf": {
+    "bytes": 182589,
+    "fetched": "2026-11-02",
+    "sha256": "ce90ae72f13f772e447c3c11ecc6496422993ccd76ffc0b8ab865a6e37f7fb05",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20GOLD%20BEACH%20-%20BROOKINGS.pdf"
+  },
+  "odfw_landings_2024/2024 - NETARTS-DEPOE BAY.pdf": {
+    "bytes": 177893,
+    "fetched": "2026-11-02",
+    "sha256": "a698a64e292c043135688b89984b18adb78a45d9586fd665f17b33823059b6c5",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20NETARTS-DEPOE%20BAY.pdf"
+  },
+  "odfw_landings_2024/2024 - NEWPORT.pdf": {
+    "bytes": 223592,
+    "fetched": "2026-11-02",
+    "sha256": "6db42575a1ac22924d49fcfdb9a4d7be57577f7080bc4659f5aeaec6aaedbb5e",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20NEWPORT.pdf"
+  },
+  "odfw_landings_2024/2024 - WALDPORT TO WINCHESTER BAY.pdf": {
+    "bytes": 183252,
+    "fetched": "2026-11-02",
+    "sha256": "ee3898771881333878db94d14f3af633b0e0414806c527c34a81558b341e8461",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/2024/2024%20-%20WALDPORT%20TO%20WINCHESTER%20BAY.pdf"
+  },
+  "odfw_landings_2024/EXPLANATION.pdf": {
+    "bytes": 10316,
+    "fetched": "2026-11-02",
+    "sha256": "e28a6de79487642b9014306ba15c4350c232ed41e7222705c1780d2e706898a8",
+    "url": "https://www.dfw.state.or.us/fish/commercial/landing_stats/EXPLANATION.pdf"
+  }
+}
