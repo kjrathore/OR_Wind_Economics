@@ -1,0 +1,432 @@
+{
+ "rows": 117300,
+ "hex_acres": 10.0,
+ "bbox": [
+  -125.1520730957079,
+  41.978238402640564,
+  -124.43454986200553,
+  43.95995580740699
+ ],
+ "columns": [
+  {
+   "name": "lon",
+   "dtype": "float32",
+   "offset": 0
+  },
+  {
+   "name": "lat",
+   "dtype": "float32",
+   "offset": 469200
+  },
+  {
+   "name": "final",
+   "dtype": "uint16",
+   "offset": 938400,
+   "label": "Final suitability (all submodels)",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_FinalSuitability.score"
+  },
+  {
+   "name": "fisheries",
+   "dtype": "uint16",
+   "offset": 1173000,
+   "label": "Fisheries submodel",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_SuitabillitySubmodel_Fisheries.score"
+  },
+  {
+   "name": "industry",
+   "dtype": "uint16",
+   "offset": 1407600,
+   "label": "Industry & operations submodel",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_SuitabillitySubmodel_IndustryOperations.score"
+  },
+  {
+   "name": "natres",
+   "dtype": "uint16",
+   "offset": 1642200,
+   "label": "Natural resources submodel",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_SuitabillitySubmodel_NaturalResources.score"
+  },
+  {
+   "name": "wind",
+   "dtype": "uint16",
+   "offset": 1876800,
+   "label": "Wind (LCOE 2027) submodel",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_SuitabillitySubmodel_Wind.score"
+  },
+  {
+   "name": "birds",
+   "dtype": "uint16",
+   "offset": 2111400,
+   "label": "Marine birds combined layer",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_CombinedSuitability_MarineBirds.score"
+  },
+  {
+   "name": "habitat",
+   "dtype": "uint16",
+   "offset": 2346000,
+   "label": "NMFS habitats combined layer",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_CombinedSuitability_NMFS_Habitats.SCENARIO_2"
+  },
+  {
+   "name": "protected",
+   "dtype": "uint16",
+   "offset": 2580600,
+   "label": "NMFS protected species combined layer",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_CombinedSuitability_NMFS_ProtectedSpecies.SCENARIO_3"
+  },
+  {
+   "name": "surveys",
+   "dtype": "uint16",
+   "offset": 2815200,
+   "label": "NMFS scientific surveys combined layer",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_CombinedSuitability_NMFS_ScientificSurveys.SCENARIO_2"
+  },
+  {
+   "name": "constraint",
+   "dtype": "uint16",
+   "offset": 3049800,
+   "label": "Constraints (0 = DoD exclusion / shipping fairway)",
+   "scale": 1.5259254737998596e-05,
+   "missing": 65535,
+   "source": "NCCOS 2023 OR_SuitabillitySubmodel_Constraints.Constraint"
+  },
+  {
+   "name": "final_cat",
+   "dtype": "uint8",
+   "offset": 3284400,
+   "label": "Final suitability (all submodels) \u2013 category",
+   "categories": [
+    "Constrained",
+    "Low",
+    "Moderately Low",
+    "Moderate",
+    "Moderately High",
+    "High"
+   ]
+  },
+  {
+   "name": "fisheries_cat",
+   "dtype": "uint8",
+   "offset": 3401700,
+   "label": "Fisheries submodel \u2013 category",
+   "categories": [
+    "Constrained",
+    "Low",
+    "Moderately Low",
+    "Moderate",
+    "Moderately High",
+    "High"
+   ]
+  },
+  {
+   "name": "industry_cat",
+   "dtype": "uint8",
+   "offset": 3519000,
+   "label": "Industry & operations submodel \u2013 category",
+   "categories": [
+    "Constrained",
+    "Low",
+    "Moderately Low",
+    "Moderate",
+    "Moderately High",
+    "High"
+   ]
+  },
+  {
+   "name": "natres_cat",
+   "dtype": "uint8",
+   "offset": 3636300,
+   "label": "Natural resources submodel \u2013 category",
+   "categories": [
+    "Constrained",
+    "Low",
+    "Moderately Low",
+    "Moderate",
+    "Moderately High",
+    "High"
+   ]
+  },
+  {
+   "name": "wind_cat",
+   "dtype": "uint8",
+   "offset": 3753600,
+   "label": "Wind (LCOE 2027) submodel \u2013 category",
+   "categories": [
+    "Constrained",
+    "Low",
+    "Moderately Low",
+    "Moderate",
+    "Moderately High",
+    "High"
+   ]
+  },
+  {
+   "name": "birds_cat",
+   "dtype": "uint8",
+   "offset": 3870900,
+   "label": "Marine birds combined layer \u2013 category",
+   "categories": [
+    "Constrained",
+    "Low",
+    "Moderately Low",
+    "Moderate",
+    "Moderately High",
+    "High"
+   ]
+  },
+  {
+   "name": "call_area",
+   "dtype": "uint8",
+   "offset": 3988200,
+   "label": "BOEM 2022 Call Area",
+   "codes": {
+    "0": null,
+    "1": "Coos Bay",
+    "2": "Brookings"
+   }
+  },
+  {
+   "name": "wea",
+   "dtype": "uint8",
+   "offset": 4105500,
+   "label": "BOEM 2024 Wind Energy Area (rescinded Jul 2025)",
+   "codes": {
+    "0": null,
+    "1": "Coos Bay",
+    "2": "Brookings"
+   }
+  },
+  {
+   "name": "hh_cluster",
+   "dtype": "uint8",
+   "offset": 4222800,
+   "label": "NCCOS high-high suitability cluster"
+  },
+  {
+   "name": "depth_m",
+   "dtype": "int16",
+   "offset": 4340100,
+   "label": "Water depth (m, ETOPO1 1-arcmin, interpolated)"
+  },
+  {
+   "name": "shore_km",
+   "dtype": "uint16",
+   "offset": 4574700,
+   "scale": 0.1,
+   "label": "Distance to shore (km, straight line)"
+  },
+  {
+   "name": "port_idx",
+   "dtype": "uint8",
+   "offset": 4809300,
+   "label": "Nearest port (index into ports)"
+  },
+  {
+   "name": "port_km",
+   "dtype": "uint16",
+   "offset": 4926600,
+   "scale": 0.1,
+   "label": "Distance to nearest port (km, straight line)"
+  }
+ ],
+ "ports": [
+  {
+   "port": "Astoria",
+   "odfw_group": "ASTORIA",
+   "county_fips": 41007,
+   "lat": 46.189,
+   "lon": -123.831
+  },
+  {
+   "port": "Garibaldi",
+   "odfw_group": "GEARHART-SEASIDE-CANNON BEACH-NEHALEM BAY-GARIBALDI",
+   "county_fips": 41057,
+   "lat": 45.558,
+   "lon": -123.91
+  },
+  {
+   "port": "Pacific City",
+   "odfw_group": "NETARTS-DEPOE BAY",
+   "county_fips": 41057,
+   "lat": 45.202,
+   "lon": -123.962
+  },
+  {
+   "port": "Depoe Bay",
+   "odfw_group": "NETARTS-DEPOE BAY",
+   "county_fips": 41041,
+   "lat": 44.809,
+   "lon": -124.063
+  },
+  {
+   "port": "Newport",
+   "odfw_group": "NEWPORT",
+   "county_fips": 41041,
+   "lat": 44.627,
+   "lon": -124.055
+  },
+  {
+   "port": "Florence",
+   "odfw_group": "WALDPORT TO WINCHESTER BAY",
+   "county_fips": 41039,
+   "lat": 43.967,
+   "lon": -124.105
+  },
+  {
+   "port": "Winchester Bay",
+   "odfw_group": "WALDPORT TO WINCHESTER BAY",
+   "county_fips": 41019,
+   "lat": 43.68,
+   "lon": -124.177
+  },
+  {
+   "port": "Charleston (Coos Bay)",
+   "odfw_group": "CHARLESTON",
+   "county_fips": 41011,
+   "lat": 43.345,
+   "lon": -124.33
+  },
+  {
+   "port": "Bandon",
+   "odfw_group": "BANDON - PORT ORFORD",
+   "county_fips": 41011,
+   "lat": 43.119,
+   "lon": -124.412
+  },
+  {
+   "port": "Port Orford",
+   "odfw_group": "BANDON - PORT ORFORD",
+   "county_fips": 41015,
+   "lat": 42.74,
+   "lon": -124.497
+  },
+  {
+   "port": "Gold Beach",
+   "odfw_group": "GOLD BEACH - BROOKINGS",
+   "county_fips": 41015,
+   "lat": 42.407,
+   "lon": -124.422
+  },
+  {
+   "port": "Brookings",
+   "odfw_group": "GOLD BEACH - BROOKINGS",
+   "county_fips": 41015,
+   "lat": 42.045,
+   "lon": -124.268
+  }
+ ],
+ "source": "NCCOS Oregon WEA siting analysis, NCEI 0306723, doi:10.25921/hwtb-xm63 (CC0)",
+ "caveats": [
+  "Scores are RELATIVE within each submodel; do not compare scores across submodels.",
+  "Coverage is limited to the BOEM 2022 Oregon Call Areas (Coos Bay, Brookings).",
+  "Intended for planning and visualization only; not regulatory, legal or navigational."
+ ],
+ "overlay_bounds": [
+  [
+   41.976767745323464,
+   -125.15418369881586
+  ],
+  [
+   43.9609429310115,
+   -124.43283652566787
+  ]
+ ],
+ "palettes": {
+  "nccos": [
+   "#d73027",
+   "#f48c32",
+   "#fadc46",
+   "#a6d96a",
+   "#5aae61",
+   "#1a6e37"
+  ],
+  "cvd": [
+   "#7a7974",
+   "#86b6ef",
+   "#5598e7",
+   "#2a78d6",
+   "#1c5cab",
+   "#104281"
+  ]
+ },
+ "overlays": {
+  "final": {
+   "file": "layers/final.png",
+   "file_cvd": "layers/final_cvd.png",
+   "label": "Final suitability (all submodels)",
+   "legend": "nccos_categories"
+  },
+  "fisheries": {
+   "file": "layers/fisheries.png",
+   "file_cvd": "layers/fisheries_cvd.png",
+   "label": "Fisheries submodel",
+   "legend": "nccos_categories"
+  },
+  "industry": {
+   "file": "layers/industry.png",
+   "file_cvd": "layers/industry_cvd.png",
+   "label": "Industry & operations submodel",
+   "legend": "nccos_categories"
+  },
+  "natres": {
+   "file": "layers/natres.png",
+   "file_cvd": "layers/natres_cvd.png",
+   "label": "Natural resources submodel",
+   "legend": "nccos_categories"
+  },
+  "wind": {
+   "file": "layers/wind.png",
+   "file_cvd": "layers/wind_cvd.png",
+   "label": "Wind (LCOE 2027) submodel",
+   "legend": "nccos_categories"
+  },
+  "birds": {
+   "file": "layers/birds.png",
+   "file_cvd": "layers/birds_cvd.png",
+   "label": "Marine birds combined layer",
+   "legend": "nccos_categories"
+  },
+  "habitat": {
+   "file": "layers/habitat.png",
+   "file_cvd": "layers/habitat_cvd.png",
+   "label": "NMFS habitats combined layer",
+   "legend": "quintiles"
+  },
+  "protected": {
+   "file": "layers/protected.png",
+   "file_cvd": "layers/protected_cvd.png",
+   "label": "NMFS protected species combined layer",
+   "legend": "quintiles"
+  },
+  "surveys": {
+   "file": "layers/surveys.png",
+   "file_cvd": "layers/surveys_cvd.png",
+   "label": "NMFS scientific surveys combined layer",
+   "legend": "quintiles"
+  },
+  "constraint": {
+   "file": "layers/constraint.png",
+   "file_cvd": "layers/constraint_cvd.png",
+   "label": "Constraints (0 = DoD exclusion / shipping fairway)",
+   "legend": "constraint"
+  }
+ }
+}

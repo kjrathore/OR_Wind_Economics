@@ -6,12 +6,12 @@ __pycache__/
 # Node
 node_modules/
 
-# Data: never committed. Raw data is re-fetched from public sources (pipeline/sources.yaml),
-# outputs are rebuilt with `make build`. Restricted data must never live inside this repo.
+# Data: raw/processed never committed. Raw data is re-fetched from public sources
+# (pipeline/sources.yaml); outputs are rebuilt with `make build`. web/data/ IS committed: it is
+# the small public site bundle GitHub Pages serves. Restricted data must never live inside this repo.
 data/raw/*
 data/processed/
 data/restricted/
-web/data/
 *.part
 
 # Keep the lock file so builds are traceable to exact source bytes

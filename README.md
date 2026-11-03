@@ -27,11 +27,11 @@ Conda instead of venv: `conda env create -f environment.yml && conda activate or
 
 ## Deploy
 
-The site is static: `web/` plus the built `web/data/` (~6 MB). `make deploy` copies them to the
-`gh-pages` branch, so the data is built on your machine and never by CI. GitHub Pages serves that
-branch at https://kjrathore.github.io/OR_Wind_Economics/ (Settings → Pages → Deploy from branch →
-`gh-pages` / root). Any static host works the same way, an OSU server included: copy `web/` without
-`bench/`.
+The site is static: `web/` plus the built `web/data/` (~6 MB, public data only, committed to `main`).
+Every push to `main` that touches `web/` publishes it to https://kjrathore.github.io/OR_Wind_Economics/
+via [.github/workflows/pages.yml](.github/workflows/pages.yml). CI doesn't build anything. After a
+data change, run `make build` locally and commit `web/data/`. Any static host works the same way, an
+OSU server included: copy `web/` without `bench/`.
 
 ## Layout
 

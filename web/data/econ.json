@@ -1,0 +1,1417 @@
+{
+ "fishery_labels": {
+  "dungeness_crab": "Dungeness crab",
+  "pink_shrimp": "Pink shrimp",
+  "hake_whiting": "Pacific hake (whiting)",
+  "albacore": "Albacore tuna",
+  "salmon": "Salmon",
+  "halibut": "Pacific halibut",
+  "groundfish": "Groundfish (trawl, fixed gear)",
+  "other": "Other species",
+  "withheld": "Withheld for confidentiality (FOSS)"
+ },
+ "port_groups": {
+  "ASTORIA": {
+   "ports": [
+    "Astoria"
+   ],
+   "usd_2024": 68218525,
+   "by_fishery": {
+    "albacore": {
+     "usd": 1596063,
+     "pounds": 909192
+    },
+    "dungeness_crab": {
+     "usd": 27811623,
+     "pounds": 7563643
+    },
+    "groundfish": {
+     "usd": 13593446,
+     "pounds": 31473968
+    },
+    "hake_whiting": {
+     "usd": 13472253,
+     "pounds": 122361260
+    },
+    "halibut": {
+     "usd": 44259,
+     "pounds": 9662
+    },
+    "other": {
+     "usd": 11072,
+     "pounds": 1192702
+    },
+    "pink_shrimp": {
+     "usd": 11476780,
+     "pounds": 21401100
+    },
+    "salmon": {
+     "usd": 213029,
+     "pounds": 33034
+    }
+   }
+  },
+  "BANDON - PORT ORFORD": {
+   "ports": [
+    "Bandon",
+    "Port Orford"
+   ],
+   "usd_2024": 3818797,
+   "by_fishery": {
+    "albacore": {
+     "usd": 69910,
+     "pounds": 36743
+    },
+    "dungeness_crab": {
+     "usd": 2169063,
+     "pounds": 492607
+    },
+    "groundfish": {
+     "usd": 1124269,
+     "pounds": 531353
+    },
+    "hake_whiting": {
+     "usd": 3,
+     "pounds": 53
+    },
+    "halibut": {
+     "usd": 171882,
+     "pounds": 37082
+    },
+    "other": {
+     "usd": 124881,
+     "pounds": 52741
+    },
+    "salmon": {
+     "usd": 158789,
+     "pounds": 17637
+    }
+   }
+  },
+  "CHARLESTON": {
+   "ports": [
+    "Charleston (Coos Bay)"
+   ],
+   "usd_2024": 24804595,
+   "by_fishery": {
+    "albacore": {
+     "usd": 2283877,
+     "pounds": 1415002
+    },
+    "dungeness_crab": {
+     "usd": 12523923,
+     "pounds": 2801827
+    },
+    "groundfish": {
+     "usd": 740292,
+     "pounds": 1432938
+    },
+    "hake_whiting": {
+     "usd": 1520494,
+     "pounds": 12670879
+    },
+    "halibut": {
+     "usd": 99914,
+     "pounds": 18209
+    },
+    "other": {
+     "usd": 36420,
+     "pounds": 40117
+    },
+    "pink_shrimp": {
+     "usd": 7099690,
+     "pounds": 12888380
+    },
+    "salmon": {
+     "usd": 499985,
+     "pounds": 55923
+    }
+   }
+  },
+  "GEARHART-SEASIDE-CANNON BEACH-NEHALEM BAY-GARIBALDI": {
+   "ports": [
+    "Garibaldi"
+   ],
+   "usd_2024": 11546119,
+   "by_fishery": {
+    "albacore": {
+     "usd": 324307,
+     "pounds": 136911
+    },
+    "dungeness_crab": {
+     "usd": 10122856,
+     "pounds": 2291638
+    },
+    "groundfish": {
+     "usd": 112373,
+     "pounds": 38996
+    },
+    "other": {
+     "usd": 934411,
+     "pounds": 646501
+    },
+    "salmon": {
+     "usd": 52172,
+     "pounds": 9043
+    }
+   }
+  },
+  "GOLD BEACH - BROOKINGS": {
+   "ports": [
+    "Gold Beach",
+    "Brookings"
+   ],
+   "usd_2024": 4196358,
+   "by_fishery": {
+    "albacore": {
+     "usd": 75518,
+     "pounds": 27608
+    },
+    "dungeness_crab": {
+     "usd": 3628792,
+     "pounds": 925042
+    },
+    "groundfish": {
+     "usd": 250310,
+     "pounds": 125862
+    },
+    "halibut": {
+     "usd": 5797,
+     "pounds": 1075
+    },
+    "other": {
+     "usd": 92865,
+     "pounds": 38778
+    },
+    "pink_shrimp": {
+     "usd": 120109,
+     "pounds": 233329
+    },
+    "salmon": {
+     "usd": 22967,
+     "pounds": 2730
+    }
+   }
+  },
+  "NETARTS-DEPOE BAY": {
+   "ports": [
+    "Pacific City",
+    "Depoe Bay"
+   ],
+   "usd_2024": 676128,
+   "by_fishery": {
+    "albacore": {
+     "usd": 9946,
+     "pounds": 4094
+    },
+    "dungeness_crab": {
+     "usd": 90103,
+     "pounds": 19725
+    },
+    "groundfish": {
+     "usd": 213252,
+     "pounds": 67389
+    },
+    "halibut": {
+     "usd": 510,
+     "pounds": 69
+    },
+    "other": {
+     "usd": 353077,
+     "pounds": 140037
+    },
+    "salmon": {
+     "usd": 9240,
+     "pounds": 2091
+    }
+   }
+  },
+  "NEWPORT": {
+   "ports": [
+    "Newport"
+   ],
+   "usd_2024": 59444300,
+   "by_fishery": {
+    "albacore": {
+     "usd": 3585732,
+     "pounds": 2238148
+    },
+    "dungeness_crab": {
+     "usd": 38779831,
+     "pounds": 8941701
+    },
+    "groundfish": {
+     "usd": 5416019,
+     "pounds": 10601547
+    },
+    "hake_whiting": {
+     "usd": 1263616,
+     "pounds": 12638760
+    },
+    "halibut": {
+     "usd": 677587,
+     "pounds": 128634
+    },
+    "other": {
+     "usd": 295580,
+     "pounds": 359383
+    },
+    "pink_shrimp": {
+     "usd": 7929986,
+     "pounds": 14916988
+    },
+    "salmon": {
+     "usd": 1495949,
+     "pounds": 161926
+    }
+   }
+  },
+  "WALDPORT TO WINCHESTER BAY": {
+   "ports": [
+    "Florence",
+    "Winchester Bay"
+   ],
+   "usd_2024": 5887484,
+   "by_fishery": {
+    "albacore": {
+     "usd": 366978,
+     "pounds": 215230
+    },
+    "dungeness_crab": {
+     "usd": 4422631,
+     "pounds": 891562
+    },
+    "groundfish": {
+     "usd": 459051,
+     "pounds": 357959
+    },
+    "hake_whiting": {
+     "usd": 1,
+     "pounds": 3
+    },
+    "halibut": {
+     "usd": 244701,
+     "pounds": 41785
+    },
+    "other": {
+     "usd": 271564,
+     "pounds": 342773
+    },
+    "salmon": {
+     "usd": 122558,
+     "pounds": 12585
+    }
+   }
+  }
+ },
+ "state_by_year": {
+  "2015": {
+   "albacore": 9219675,
+   "dungeness_crab": 11955286,
+   "groundfish": 28756972,
+   "hake_whiting": 7145945,
+   "halibut": 1273383,
+   "other": 4790371,
+   "pink_shrimp": 40412664,
+   "salmon": 11839083,
+   "withheld": 576738
+  },
+  "2016": {
+   "albacore": 12502033,
+   "dungeness_crab": 55732331,
+   "groundfish": 32037211,
+   "hake_whiting": 8693677,
+   "halibut": 1392468,
+   "other": 7032868,
+   "pink_shrimp": 25093252,
+   "salmon": 8271090,
+   "withheld": 1471850
+  },
+  "2017": {
+   "albacore": 10803127,
+   "dungeness_crab": 58728088,
+   "groundfish": 35698165,
+   "hake_whiting": 16384901,
+   "halibut": 1261580,
+   "other": 5595033,
+   "pink_shrimp": 12688375,
+   "salmon": 5530768,
+   "withheld": 481959
+  },
+  "2018": {
+   "albacore": 9723604,
+   "dungeness_crab": 74527011,
+   "groundfish": 31625746,
+   "hake_whiting": 16434750,
+   "halibut": 1088434,
+   "other": 7898132,
+   "pink_shrimp": 26908621,
+   "salmon": 5675450,
+   "withheld": 840739
+  },
+  "2019": {
+   "albacore": 10856373,
+   "dungeness_crab": 67929754,
+   "groundfish": 28179335,
+   "hake_whiting": 21719303,
+   "halibut": 1249018,
+   "other": 10350084,
+   "pink_shrimp": 19940367,
+   "salmon": 4158878,
+   "withheld": 662937
+  },
+  "2020": {
+   "albacore": 7054154,
+   "dungeness_crab": 72816499,
+   "groundfish": 18455552,
+   "hake_whiting": 15217880,
+   "halibut": 1185809,
+   "other": 11835514,
+   "pink_shrimp": 22592709,
+   "salmon": 5025497,
+   "withheld": 783317
+  },
+  "2021": {
+   "albacore": 6615951,
+   "dungeness_crab": 120010711,
+   "groundfish": 22532456,
+   "hake_whiting": 17478543,
+   "halibut": 1579089,
+   "other": 9261837,
+   "pink_shrimp": 23360213,
+   "salmon": 6513738,
+   "withheld": 802198
+  },
+  "2022": {
+   "albacore": 14347002,
+   "dungeness_crab": 31442441,
+   "groundfish": 30227887,
+   "hake_whiting": 18912640,
+   "halibut": 1579729,
+   "other": 9589570,
+   "pink_shrimp": 18789245,
+   "salmon": 7566534,
+   "withheld": 137339
+  },
+  "2023": {
+   "albacore": 3525085,
+   "dungeness_crab": 104139427,
+   "groundfish": 26288337,
+   "hake_whiting": 14924487,
+   "halibut": 1607566,
+   "other": 4490950,
+   "pink_shrimp": 18722576,
+   "salmon": 5205299,
+   "withheld": 814634
+  },
+  "2024": {
+   "albacore": 8313318,
+   "dungeness_crab": 99547801,
+   "groundfish": 21899473,
+   "hake_whiting": 14735628,
+   "halibut": 1244647,
+   "other": 3358676,
+   "pink_shrimp": 26627587,
+   "salmon": 7252698,
+   "withheld": 111387
+  }
+ },
+ "counties": {
+  "41007": [
+   {
+    "county": "Clatsop",
+    "code": "------",
+    "source": "CBP employer",
+    "estab": 1602,
+    "emp": 16327,
+    "payroll_k": 783505,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "All industries (CBP total)"
+   },
+   {
+    "county": "Clatsop",
+    "code": "00",
+    "source": "NES nonemployer",
+    "estab": 3273,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 191619,
+    "flag": "G",
+    "industry": "All industries (NES total)"
+   },
+   {
+    "county": "Clatsop",
+    "code": "1141",
+    "source": "CBP employer",
+    "estab": 20,
+    "emp": 8,
+    "payroll_k": 651,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Clatsop",
+    "code": "1141",
+    "source": "NES nonemployer",
+    "estab": 247,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 26610,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Clatsop",
+    "code": "3117",
+    "source": "CBP employer",
+    "estab": 5,
+    "emp": 335,
+    "payroll_k": 23901,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Seafood product preparation & packaging"
+   },
+   {
+    "county": "Clatsop",
+    "code": "4883",
+    "source": "CBP employer",
+    "estab": 3,
+    "emp": 4,
+    "payroll_k": 581,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Support activities for water transportation"
+   },
+   {
+    "county": "Clatsop",
+    "code": "7139",
+    "source": "CBP employer",
+    "estab": 17,
+    "emp": 157,
+    "payroll_k": 5244,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Clatsop",
+    "code": "7139",
+    "source": "NES nonemployer",
+    "estab": 21,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 1641,
+    "flag": "H",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Clatsop",
+    "code": "7211",
+    "source": "CBP employer",
+    "estab": 69,
+    "emp": 1120,
+    "payroll_k": 38168,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Clatsop",
+    "code": "7211",
+    "source": "NES nonemployer",
+    "estab": 35,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 4607,
+    "flag": "H",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Clatsop",
+    "code": "722",
+    "source": "CBP employer",
+    "estab": 227,
+    "emp": 3354,
+    "payroll_k": 97582,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   },
+   {
+    "county": "Clatsop",
+    "code": "722",
+    "source": "NES nonemployer",
+    "estab": 70,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 4929,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   }
+  ],
+  "41011": [
+   {
+    "county": "Coos",
+    "code": "------",
+    "source": "CBP employer",
+    "estab": 1627,
+    "emp": 19515,
+    "payroll_k": 914122,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "All industries (CBP total)"
+   },
+   {
+    "county": "Coos",
+    "code": "00",
+    "source": "NES nonemployer",
+    "estab": 4011,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 225237,
+    "flag": "G",
+    "industry": "All industries (NES total)"
+   },
+   {
+    "county": "Coos",
+    "code": "1141",
+    "source": "CBP employer",
+    "estab": 7,
+    "emp": 13,
+    "payroll_k": 615,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Coos",
+    "code": "1141",
+    "source": "NES nonemployer",
+    "estab": 118,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 12710,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Coos",
+    "code": "2371",
+    "source": "CBP employer",
+    "estab": 3,
+    "emp": 20,
+    "payroll_k": 1180,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Utility system construction"
+   },
+   {
+    "county": "Coos",
+    "code": "3117",
+    "source": "CBP employer",
+    "estab": 5,
+    "emp": 270,
+    "payroll_k": 7569,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Seafood product preparation & packaging"
+   },
+   {
+    "county": "Coos",
+    "code": "4872",
+    "source": "CBP employer",
+    "estab": 3,
+    "emp": 2,
+    "payroll_k": 87,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Scenic & sightseeing transportation, water"
+   },
+   {
+    "county": "Coos",
+    "code": "4883",
+    "source": "CBP employer",
+    "estab": 7,
+    "emp": 43,
+    "payroll_k": 2561,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Support activities for water transportation"
+   },
+   {
+    "county": "Coos",
+    "code": "7139",
+    "source": "CBP employer",
+    "estab": 15,
+    "emp": 950,
+    "payroll_k": 40783,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Coos",
+    "code": "7139",
+    "source": "NES nonemployer",
+    "estab": 62,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 1508,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Coos",
+    "code": "7211",
+    "source": "CBP employer",
+    "estab": 24,
+    "emp": 554,
+    "payroll_k": 23925,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Coos",
+    "code": "7211",
+    "source": "NES nonemployer",
+    "estab": 24,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 530,
+    "flag": "G",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Coos",
+    "code": "722",
+    "source": "CBP employer",
+    "estab": 151,
+    "emp": 1861,
+    "payroll_k": 41535,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   },
+   {
+    "county": "Coos",
+    "code": "722",
+    "source": "NES nonemployer",
+    "estab": 56,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 2407,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   }
+  ],
+  "41015": [
+   {
+    "county": "Curry",
+    "code": "------",
+    "source": "CBP employer",
+    "estab": 706,
+    "emp": 5376,
+    "payroll_k": 246561,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "All industries (CBP total)"
+   },
+   {
+    "county": "Curry",
+    "code": "00",
+    "source": "NES nonemployer",
+    "estab": 1916,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 105617,
+    "flag": "G",
+    "industry": "All industries (NES total)"
+   },
+   {
+    "county": "Curry",
+    "code": "1141",
+    "source": "CBP employer",
+    "estab": 20,
+    "emp": 26,
+    "payroll_k": 933,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Curry",
+    "code": "1141",
+    "source": "NES nonemployer",
+    "estab": 135,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 11643,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Curry",
+    "code": "2211",
+    "source": "CBP employer",
+    "estab": 3,
+    "emp": 63,
+    "payroll_k": 7748,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Electric power generation, transmission & distribution"
+   },
+   {
+    "county": "Curry",
+    "code": "7139",
+    "source": "CBP employer",
+    "estab": 10,
+    "emp": 47,
+    "payroll_k": 2031,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Curry",
+    "code": "7139",
+    "source": "NES nonemployer",
+    "estab": 19,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 1077,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Curry",
+    "code": "7211",
+    "source": "CBP employer",
+    "estab": 26,
+    "emp": 192,
+    "payroll_k": 4488,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Curry",
+    "code": "7211",
+    "source": "NES nonemployer",
+    "estab": 19,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 866,
+    "flag": "H",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Curry",
+    "code": "722",
+    "source": "CBP employer",
+    "estab": 83,
+    "emp": 851,
+    "payroll_k": 21098,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   },
+   {
+    "county": "Curry",
+    "code": "722",
+    "source": "NES nonemployer",
+    "estab": 24,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 1339,
+    "flag": "H",
+    "industry": "Food services & drinking places"
+   }
+  ],
+  "41019": [
+   {
+    "county": "Douglas",
+    "code": "------",
+    "source": "CBP employer",
+    "estab": 2659,
+    "emp": 32867,
+    "payroll_k": 1761900,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "All industries (CBP total)"
+   },
+   {
+    "county": "Douglas",
+    "code": "00",
+    "source": "NES nonemployer",
+    "estab": 6250,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 311900,
+    "flag": "G",
+    "industry": "All industries (NES total)"
+   },
+   {
+    "county": "Douglas",
+    "code": "1141",
+    "source": "CBP employer",
+    "estab": 6,
+    "emp": 11,
+    "payroll_k": 357,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Douglas",
+    "code": "1141",
+    "source": "NES nonemployer",
+    "estab": 70,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 5170,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Douglas",
+    "code": "2211",
+    "source": "CBP employer",
+    "estab": 6,
+    "emp": 131,
+    "payroll_k": 18489,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Electric power generation, transmission & distribution"
+   },
+   {
+    "county": "Douglas",
+    "code": "2371",
+    "source": "CBP employer",
+    "estab": 7,
+    "emp": 49,
+    "payroll_k": 2861,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Utility system construction"
+   },
+   {
+    "county": "Douglas",
+    "code": "3366",
+    "source": "CBP employer",
+    "estab": 5,
+    "emp": 239,
+    "payroll_k": 14426,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Ship & boat building"
+   },
+   {
+    "county": "Douglas",
+    "code": "7139",
+    "source": "CBP employer",
+    "estab": 21,
+    "emp": 190,
+    "payroll_k": 4664,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Douglas",
+    "code": "7139",
+    "source": "NES nonemployer",
+    "estab": 36,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 957,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Douglas",
+    "code": "7211",
+    "source": "CBP employer",
+    "estab": 31,
+    "emp": 910,
+    "payroll_k": 35522,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Douglas",
+    "code": "7211",
+    "source": "NES nonemployer",
+    "estab": 31,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 1348,
+    "flag": "H",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Douglas",
+    "code": "722",
+    "source": "CBP employer",
+    "estab": 231,
+    "emp": 3097,
+    "payroll_k": 64746,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   },
+   {
+    "county": "Douglas",
+    "code": "722",
+    "source": "NES nonemployer",
+    "estab": 120,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 6678,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   }
+  ],
+  "41039": [
+   {
+    "county": "Lane",
+    "code": "------",
+    "source": "CBP employer",
+    "estab": 10151,
+    "emp": 129060,
+    "payroll_k": 6845970,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "All industries (CBP total)"
+   },
+   {
+    "county": "Lane",
+    "code": "00",
+    "source": "NES nonemployer",
+    "estab": 27218,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 1359975,
+    "flag": "G",
+    "industry": "All industries (NES total)"
+   },
+   {
+    "county": "Lane",
+    "code": "1141",
+    "source": "NES nonemployer",
+    "estab": 83,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 5676,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Lane",
+    "code": "2211",
+    "source": "CBP employer",
+    "estab": 5,
+    "emp": 80,
+    "payroll_k": 9726,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Electric power generation, transmission & distribution"
+   },
+   {
+    "county": "Lane",
+    "code": "2371",
+    "source": "CBP employer",
+    "estab": 13,
+    "emp": 174,
+    "payroll_k": 14358,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Utility system construction"
+   },
+   {
+    "county": "Lane",
+    "code": "2371",
+    "source": "NES nonemployer",
+    "estab": 3,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 211,
+    "flag": "J",
+    "industry": "Utility system construction"
+   },
+   {
+    "county": "Lane",
+    "code": "7139",
+    "source": "CBP employer",
+    "estab": 90,
+    "emp": 1382,
+    "payroll_k": 27861,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Lane",
+    "code": "7139",
+    "source": "NES nonemployer",
+    "estab": 172,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 5789,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Lane",
+    "code": "7211",
+    "source": "CBP employer",
+    "estab": 77,
+    "emp": 1743,
+    "payroll_k": 57589,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Lane",
+    "code": "7211",
+    "source": "NES nonemployer",
+    "estab": 126,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 4327,
+    "flag": "G",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Lane",
+    "code": "722",
+    "source": "CBP employer",
+    "estab": 931,
+    "emp": 13677,
+    "payroll_k": 334836,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   },
+   {
+    "county": "Lane",
+    "code": "722",
+    "source": "NES nonemployer",
+    "estab": 408,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 17017,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   }
+  ],
+  "41041": [
+   {
+    "county": "Lincoln",
+    "code": "------",
+    "source": "CBP employer",
+    "estab": 1613,
+    "emp": 14839,
+    "payroll_k": 660247,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "All industries (CBP total)"
+   },
+   {
+    "county": "Lincoln",
+    "code": "00",
+    "source": "NES nonemployer",
+    "estab": 3864,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 235127,
+    "flag": "G",
+    "industry": "All industries (NES total)"
+   },
+   {
+    "county": "Lincoln",
+    "code": "1141",
+    "source": "CBP employer",
+    "estab": 57,
+    "emp": 111,
+    "payroll_k": 5285,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Lincoln",
+    "code": "1141",
+    "source": "NES nonemployer",
+    "estab": 279,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 45825,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Lincoln",
+    "code": "3117",
+    "source": "CBP employer",
+    "estab": 5,
+    "emp": 250,
+    "payroll_k": 16214,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Seafood product preparation & packaging"
+   },
+   {
+    "county": "Lincoln",
+    "code": "4872",
+    "source": "CBP employer",
+    "estab": 10,
+    "emp": 32,
+    "payroll_k": 1274,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Scenic & sightseeing transportation, water"
+   },
+   {
+    "county": "Lincoln",
+    "code": "7139",
+    "source": "CBP employer",
+    "estab": 10,
+    "emp": 40,
+    "payroll_k": 981,
+    "receipts_k": null,
+    "flag": "H",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Lincoln",
+    "code": "7139",
+    "source": "NES nonemployer",
+    "estab": 24,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 826,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Lincoln",
+    "code": "7211",
+    "source": "CBP employer",
+    "estab": 81,
+    "emp": 1621,
+    "payroll_k": 48097,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Lincoln",
+    "code": "7211",
+    "source": "NES nonemployer",
+    "estab": 32,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 2121,
+    "flag": "G",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Lincoln",
+    "code": "722",
+    "source": "CBP employer",
+    "estab": 209,
+    "emp": 2606,
+    "payroll_k": 83944,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   },
+   {
+    "county": "Lincoln",
+    "code": "722",
+    "source": "NES nonemployer",
+    "estab": 56,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 2876,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   }
+  ],
+  "41057": [
+   {
+    "county": "Tillamook",
+    "code": "------",
+    "source": "CBP employer",
+    "estab": 769,
+    "emp": 8076,
+    "payroll_k": 422153,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "All industries (CBP total)"
+   },
+   {
+    "county": "Tillamook",
+    "code": "00",
+    "source": "NES nonemployer",
+    "estab": 2211,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 129969,
+    "flag": "G",
+    "industry": "All industries (NES total)"
+   },
+   {
+    "county": "Tillamook",
+    "code": "1141",
+    "source": "CBP employer",
+    "estab": 6,
+    "emp": 11,
+    "payroll_k": 718,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Tillamook",
+    "code": "1141",
+    "source": "NES nonemployer",
+    "estab": 85,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 7998,
+    "flag": "G",
+    "industry": "Commercial fishing"
+   },
+   {
+    "county": "Tillamook",
+    "code": "7139",
+    "source": "CBP employer",
+    "estab": 7,
+    "emp": 114,
+    "payroll_k": 2511,
+    "receipts_k": null,
+    "flag": "J",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Tillamook",
+    "code": "7139",
+    "source": "NES nonemployer",
+    "estab": 18,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 790,
+    "flag": "G",
+    "industry": "Other amusement & recreation (incl. marinas)"
+   },
+   {
+    "county": "Tillamook",
+    "code": "7211",
+    "source": "CBP employer",
+    "estab": 28,
+    "emp": 282,
+    "payroll_k": 9237,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Tillamook",
+    "code": "7211",
+    "source": "NES nonemployer",
+    "estab": 28,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 923,
+    "flag": "H",
+    "industry": "Traveler accommodation"
+   },
+   {
+    "county": "Tillamook",
+    "code": "722",
+    "source": "CBP employer",
+    "estab": 102,
+    "emp": 880,
+    "payroll_k": 24883,
+    "receipts_k": null,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   },
+   {
+    "county": "Tillamook",
+    "code": "722",
+    "source": "NES nonemployer",
+    "estab": 36,
+    "emp": null,
+    "payroll_k": null,
+    "receipts_k": 3174,
+    "flag": "G",
+    "industry": "Food services & drinking places"
+   }
+  ]
+ },
+ "jobs": {
+  "cite": "Jimenez T, Keyser D, Tegen S, Speer B (2016). Floating Offshore Wind in Oregon: Potential for Jobs and Economic Impacts from Two Future Scenarios. NREL/TP-5000-65421; OCS Study BOEM 2016-030.",
+  "dollar_year": 2014,
+  "scenarios": {
+   "B": {
+    "label": "Smaller in-state supply chain",
+    "description": "Oregon builds 2.9 GW by 2050 (NREL Scenario B); slower supply-chain growth.",
+    "reference_mw": 2900,
+    "construction_job_years_per_mw": [
+     4.482758620689655,
+     7.241379310344827
+    ],
+    "construction_gdp_per_mw": [
+     462068.9655172414,
+     710344.8275862068
+    ],
+    "operations_jobs_per_mw": [
+     0.3275862068965517,
+     0.4827586206896552
+    ],
+    "operations_gdp_per_mw_year": [
+     34482.75862068965,
+     48275.862068965514
+    ],
+    "construction_earnings_per_job": 69000,
+    "operations_earnings_per_job": 72000
+   },
+   "A": {
+    "label": "Larger in-state supply chain",
+    "description": "Oregon builds 5.5 GW by 2050 (NREL Scenario A); suppliers expand in-state.",
+    "reference_mw": 5500,
+    "construction_job_years_per_mw": [
+     8.0,
+     12.0
+    ],
+    "construction_gdp_per_mw": [
+     836363.6363636364,
+     1036363.6363636364
+    ],
+    "operations_jobs_per_mw": [
+     0.41818181818181815,
+     0.6
+    ],
+    "operations_gdp_per_mw_year": [
+     45454.545454545456,
+     61818.181818181816
+    ],
+    "construction_earnings_per_job": 70000,
+    "operations_earnings_per_job": 71000
+   }
+  }
+ },
+ "sources": {
+  "port_groups": "ODFW Commercial Landing Statistics 2024 Final (ex-vessel $)",
+  "state_by_year": "NOAA Fisheries FOSS commercial landings, Oregon",
+  "counties": "U.S. Census Bureau CBP 2023 (employers) and Nonemployer Statistics 2023",
+  "jobs": "NREL 2016 / OCS Study BOEM 2016-030 (statewide JEDI scenarios, 2014 $)"
+ }
+}

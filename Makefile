@@ -1,7 +1,7 @@
 # conda users: make build PY=python
 PY ?= .venv/bin/python
 
-.PHONY: all setup fetch build bench serve deploy clean
+.PHONY: all setup fetch build bench serve clean
 
 all: fetch build bench
 
@@ -22,9 +22,6 @@ bench:            ## in-browser query latency check
 
 serve:            ## static preview of web/ at http://localhost:8000
 	cd web && python3 -m http.server 8000
-
-deploy:           ## publish web/ (with built data) to the gh-pages branch
-	scripts/deploy_pages.sh
 
 clean:            ## remove build outputs (keeps downloaded raw data)
 	rm -rf data/processed web/data
