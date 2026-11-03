@@ -8,9 +8,10 @@ This is an academic research project. These rules apply to every source and ever
 |---|---|---|---|---|
 | **Public** | Published, already-aggregated releases (NCEI archives, ODFW published reports, Census CBP/NES, NOAA FOSS, MarineCadastre) | `data/raw/` via `pipeline/fetch.py` | No (re-fetched) | Yes, with citation |
 | **Restricted** | Anything obtained under a data-use agreement: PacFIN fish tickets, VMS/logbooks, unpublished agency layers, interview/survey data | **Outside this repo**, on OSU-approved storage (e.g. encrypted OSU research drive) | **Never** | Only aggregated outputs that pass §3 and the provider's DUA terms |
-| **Derived** | Our computed tables/images | `data/processed/`, `web/data/` | No (rebuilt) | Yes if every input is Public, or §3 applied |
+| **Derived** | Our computed tables/images | `data/processed/`, `web/data/` | `data/processed/`: no (rebuilt). `web/data/`: **yes**, it is the published site bundle, so anything committed there is public | Yes if every input is Public, or §3 applied |
 
-`data/restricted/` is gitignored as a safety net only; don't store restricted data there by default.
+Because `web/data/` is committed and served by GitHub Pages, a build that uses any Restricted input must pass §3
+before its output is committed. `data/restricted/` is gitignored as a safety net only; don't store restricted data there by default.
 
 ## 2. Adding a source
 
