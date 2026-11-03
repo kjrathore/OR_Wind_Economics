@@ -25,6 +25,14 @@ make serve     # open http://localhost:8000
 Conda instead of venv: `conda env create -f environment.yml && conda activate orwind`, then
 `make fetch build PY=python`.
 
+## Deploy
+
+The site is static: `web/` plus the built `web/data/` (~6 MB). `make deploy` copies them to the
+`gh-pages` branch, so the data is built on your machine and never by CI. GitHub Pages serves that
+branch at https://kjrathore.github.io/OR_Wind_Economics/ (Settings → Pages → Deploy from branch →
+`gh-pages` / root). Any static host works the same way, an OSU server included: copy `web/` without
+`bench/`.
+
 ## Layout
 
 ```
